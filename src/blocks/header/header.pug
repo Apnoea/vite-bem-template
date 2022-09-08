@@ -1,0 +1,35 @@
+-
+  let headerMenu =[
+    { title: 'Title_1',
+      list: [
+        { name: 'Link_1', link: '#' },
+        { name: 'Link_2', link: '#' },
+        { name: 'Link_3', link: '#' }
+      ]
+    },
+    { title: 'Title_2', link: '#' },
+    { title: 'Title_3',
+      list: [
+        { name: 'Link_1', link: '#' },
+        { name: 'Link_2', link: '#' },
+        { name: 'Link_3', link: '#' }
+      ]
+    },
+    { title: 'Title_4', link: '#' }
+  ]
+
+header.header
+  .inner
+    a.header__logo(href='/')
+      +icon('icon_logo')
+    ul.header__menu
+      each headerMenuItem in headerMenu
+        li.header__item
+          if headerMenuItem.list
+            .header__link.header__link--arrow=headerMenuItem.title
+            ul.header__list
+              each headerMenuItemLink in headerMenuItem.list
+                li.header__item
+                  a.header__link(href=headerMenuItemLink.link)=headerMenuItemLink.name
+          else
+            a.header__link(href=headerMenuItem.link)=headerMenuItem.title

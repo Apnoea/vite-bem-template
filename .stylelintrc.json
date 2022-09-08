@@ -1,0 +1,85 @@
+{
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "at-rule-empty-line-before": ["always", {
+      "except": ["after-same-name", "inside-block"]
+    }],
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always",
+    "at-rule-no-vendor-prefix": true,
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-semicolon-space-before": "never",
+    "block-closing-brace-newline-before": "always",
+    "block-closing-brace-newline-after": "always",
+    "color-hex-length": "short",
+    "font-family-name-quotes": "always-unless-keyword",
+    "indentation": 2,
+    "max-empty-lines": 2,
+    "no-descending-specificity": null,
+    "rule-empty-line-before": ["always", {
+      "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]
+    }],
+    "scss/at-import-partial-extension": "never",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/dollar-variable-pattern": null,
+    "selector-class-pattern": null,
+    "selector-no-vendor-prefix": [true, {
+      "ignoreSelectors": ["::-webkit-input-placeholder"]
+    }],
+    "string-quotes": "single",
+    "unit-allowed-list": [
+      "em",
+      "rem",
+      "deg",
+      "fr",
+      "%",
+      "s",
+      "px",
+      "vw",
+      "vh",
+      "vm",
+      "vmax",
+      "vmin"
+    ],
+    "order/properties-order": [
+      {
+        "properties": [
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
+      },
+      {
+        "properties": [
+          "width",
+          "height",
+          "margin",
+          "padding"
+        ]
+      },
+      {
+        "properties": [
+          "background",
+          "border",
+          "border-radius"
+        ]
+      },
+      {
+        "properties": [
+          "opacity"
+        ]
+      }
+    ]
+  }
+}

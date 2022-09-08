@@ -1,0 +1,18 @@
+mixin ui-select(mods, ...data)
+  -
+    const baseName = 'ui-select'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-select(class=allMods)
+    select&attributes(attributes)
+      option
+      each item in data
+        option=item
+      block

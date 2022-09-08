@@ -1,0 +1,17 @@
+mixin ui-input(id, text, mods, type)
+  -
+    const baseName = 'ui-input'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .ui-input(class=allMods)
+    input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
+    if text
+      label(for=id)
+        +ui-p6(text)

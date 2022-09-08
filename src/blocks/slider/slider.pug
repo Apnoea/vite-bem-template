@@ -1,0 +1,25 @@
+mixin slider(mods)
+  -
+    const baseName = 'slider'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .slider(class=allMods)&attributes(attributes)
+    .swiper
+      .swiper-wrapper
+        .swiper-slide
+          +icon('icon_fb')
+        .swiper-slide
+          +icon('icon_ig')
+        .swiper-slide
+          +icon('icon_tt')
+      +ui-swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
+    block

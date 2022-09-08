@@ -1,0 +1,30 @@
+mixin breadcrumbs(mods)
+  -
+    const baseName = 'breadcrumbs'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  ul.breadcrumbs(class=allMods)&attributes(attributes)
+    block
+
+mixin breadcrumbs-item(text, href, mods)
+  -
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += ' breadcrumbs__item--' + element.trim()
+      }
+    }
+
+  li.breadcrumbs__item(class=allMods)&attributes(attributes)
+    if(typeof(href) !== 'undefined' && href)
+      a.breadcrumbs__link(href=href)!=text
+    else
+      span.breadcrumbs__text!=text

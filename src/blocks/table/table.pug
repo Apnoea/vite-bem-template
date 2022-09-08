@@ -1,0 +1,75 @@
+mixin table(mods)
+  -
+    const baseName = 'table'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+  -
+    const tableItems = [
+      {
+        row: [
+          { item: [
+            { h3: 'Lorem' }
+          ]},
+          { item: [
+            { h3: 'Lorem' }
+          ]},
+          { item: [
+            { h3: 'Lorem' }
+          ]}
+        ]
+      },
+      {
+        row: [
+          { item: [
+            { p1: 'Lorem' }
+          ]},
+          { item: [
+            { p1: 'Lorem' }
+          ]},
+          { item: [
+            { p1: 'Lorem' }
+          ]}
+        ],
+      },
+      {
+        row: [
+          { item: [
+            { p1: 'Lorem' }
+          ]},
+          { item: [
+            { p1: 'Lorem' }
+          ]},
+          { item: [
+            { p1: 'Lorem' }
+          ]}
+        ],
+      },
+    ]
+
+  .table(class=allMods)&attributes(attributes)
+    each tableRow in tableItems
+      .table__row
+        each tableItem in tableRow.row
+          .table__item
+            each item in tableItem.item
+              if item.h2
+                +ui-h2(item.h2)
+              if item.h3
+                +ui-h3(item.h3)
+              if item.h4
+                +ui-h4(item.h4)
+              if item.p1
+                +ui-p1(item.p1)
+              if item.p2
+                +ui-p2(item.p2)
+              if item.p3
+                +ui-p3(item.p3)
+              if item.p4
+                +ui-p4(item.p4)
+    block

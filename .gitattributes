@@ -1,0 +1,15 @@
+* text eol=lf
+
+# Graphics
+*.gif   binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.webp  binary
+
+# Video
+*.mp4   binary
+
+# Fonts
+*.woff  binary
+*.woff2 binary

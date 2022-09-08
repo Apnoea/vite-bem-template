@@ -1,0 +1,17 @@
+mixin ui-datepicker(text, mods)
+  -
+    const baseName = 'ui-datepicker'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+    let randomId = Math.random().toString(36).replace(/[^\da-z]+/g, '').slice(0, 6)
+
+  .ui-datepicker(class=allMods)&attributes(attributes)
+    input(id=randomId readonly)
+    label(for=randomId)
+      +ui-p3(text)

@@ -1,0 +1,22 @@
+mixin ui-button(text, mods, isSubmit)
+  -
+    const baseName = 'ui-button'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  if (attributes.href)
+    a.ui-button(class=allMods)&attributes(attributes)!=text
+      block
+
+  else if (typeof(isSubmit) !== 'undefined' && isSubmit)
+    input.ui-button(class=allMods type='submit' value=text)&attributes(attributes)
+
+  else
+    button.ui-button(class=allMods)&attributes(attributes)!=text
+      block

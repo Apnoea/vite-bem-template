@@ -1,0 +1,36 @@
+image: node:16.17.0
+
+environments:
+  stage: deploy
+  cache:
+    key: modules-cache-${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  script:
+    - npm i --force
+    - npm run build
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  environment:
+    name: $CI_COMMIT_BRANCH
+    url: "https://$CI_PROJECT_NAMESPACE.gitlab.io/-/$CI_PROJECT_NAME/-/jobs/$CI_JOB_ID/artifacts/public/index.html"
+  except:
+    - main
+
+pages:
+  stage: deploy
+  cache:
+    key: modules-cache-${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  script:
+    - npm i --force
+    - npm run build
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

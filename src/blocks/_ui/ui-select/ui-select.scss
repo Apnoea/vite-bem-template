@@ -1,0 +1,67 @@
+.ui-select {
+  position: relative;
+  .ts-wrapper {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      z-index: 1;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+    &.focus:not(.dropdown-top) {
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+      .ts-control {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &.dropdown-top {
+      .ts-dropdown {
+        top: auto;
+        bottom: 100%;
+        border-top: 1px solid teal;
+        border-bottom: 0;
+        border-radius: 3px 3px 0 0;
+      }
+      &.focus {
+        .ts-control {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+    }
+  }
+  .ts-control {
+    padding: 15px 20px;
+    font-size: 16px;
+    border-color: teal;
+    border-radius: 6px;
+    input {
+      font-size: inherit;
+    }
+  }
+  .ts-dropdown {
+    margin: 0;
+    font-size: 16px;
+    border-color: teal;
+    .option {
+      padding: 15px 20px;
+    }
+  }
+  .just-validate-error-label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+  }
+}

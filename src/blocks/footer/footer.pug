@@ -1,0 +1,40 @@
+-
+  let footerMenu =[
+    { title: 'Title_1',
+      list: [
+      { name: 'Link_1', link: '#' },
+      { name: 'Link_2', link: '#' },
+      { name: 'Link_3', link: '#' }
+    ]},
+    { title: 'Title_2',
+      list: [
+      { name: 'Link_1', link: '#' },
+      { name: 'Link_2', link: '#' },
+      { name: 'Link_3', link: '#' }
+    ]},
+    { title: 'Title_3',
+      list: [
+      { name: 'Link_1', link: '#' },
+      { name: 'Link_2', link: '#' },
+      { name: 'Link_3', link: '#' }
+    ]},
+    { title: 'Title_4',
+      list: [
+      { name: 'Link_1', link: '#' },
+      { name: 'Link_2', link: '#' },
+      { name: 'Link_3', link: '#' }
+    ]}
+  ]
+
+footer.footer
+  .inner
+    a.footer__logo(href='/')
+      +icon('icon_logo')
+    .footer__menu
+      each footerMenuItem in footerMenu
+        .footer__item
+          .footer__link=footerMenuItem.title
+          ul.footer__list
+            each footerMenuItemName, index in footerMenuItem.list
+              li.footer__item
+                a.footer__link(href=footerMenuItemName.link)=footerMenuItemName.name
