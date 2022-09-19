@@ -1,0 +1,56 @@
+.tabs {
+  position: relative;
+}
+.tabs-head {
+  position: relative;
+  display: flex;
+  padding: 6px 15px;
+  border-radius: 6px;
+  background-color: #ccc;
+  @include media-laptop {
+    margin: 0 -15px;
+    border-radius: 0;
+    overflow-x: auto;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(270deg, #fff 0%, rgba(255 255 255 / 0) 100%);
+    opacity: 0;
+    @include media-tablet {
+      opacity: 0.5;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__item {
+    padding: 9px 22px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+      color: $teal;
+    }
+    &--active {
+      color: $teal;
+      background: #fff;
+    }
+  }
+}
+.tabs-body {
+  margin-top: 45px;
+  &__item {
+    display: none;
+    transition: 0.3s;
+    &--active {
+      display: block;
+    }
+  }
+}
