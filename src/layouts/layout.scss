@@ -10,6 +10,14 @@ html {
   box-sizing: border-box;
   line-height: 1;
   scroll-behavior: smooth;
+  &.lock-scroll {
+    position: relative;
+    overflow: hidden;
+    body {
+      position: relative;
+      overflow: hidden;
+    }
+  }
 }
 body {
   -webkit-tap-highlight-color: transparent;

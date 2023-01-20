@@ -1,21 +1,18 @@
 extends ../../layouts/layout
 
 block variables
-  -const pageTitle = 'Repository blocks'
-
   -
+    const pageTitle = 'Repository blocks'
     const orderListItems = [
       { p1: 'Lorem' },
       { p1: 'Lorem' },
       { p1: 'Lorem' }
     ]
-  -
     const unorderListItems = [
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
     ]
-  -
     const tabHeadings = [
       {
         p3: 'Tab #1'
@@ -33,31 +30,29 @@ block content
     .inner
       +ui-h1(pageTitle)
       +section()
-        +ui-h4('UI Buttons', 'section')
+        +ui-h4('UI Buttons')
         br
         +ui-button('Кнопка-ссылка')(href='/')
-        +ui-button('Кнопка-submit', '', true)
         +ui-button('Кнопка-button')
         br
         br
         +ui-button('Кнопка-ссылка', '--filled')(href='/')
-        +ui-button('Кнопка-submit', '--filled', true)
         +ui-button('Кнопка-button', '--filled')
       +section()
-        +ui-h4('UI Checkbox', 'section')
+        +ui-h4('UI Checkbox')
         br
         +ui-checkbox('id', 'I love ')
           a(href='') semolina
       +section()
-        +ui-h4('UI Datepicker', 'section')
+        +ui-h4('UI Datepicker')
         br
-        +ui-h6('UI Date single', 'section')
+        +ui-h6('UI Date single')
         +ui-datepicker('', '--single')
         br
-        +ui-h6('UI Date range', 'section, --mt')
+        +ui-h6('UI Date range')
         +ui-datepicker('', '--range')
         br
-        +ui-h6('UI Date time', 'section, --mt')
+        +ui-h6('UI Date time')
         +ui-datepicker('', '--time')
       +section()
         +ui-h4('Titles')
@@ -83,42 +78,46 @@ block content
           +ui-p7('Text')
           +ui-p8('Text')
       +section()
-        +ui-h4('UI Input', 'section')
+        +ui-h4('UI Input')
         br
         +ui-input('phone', 'Phone')(required)
       +section()
-        +ui-h4('UI Range', 'section')
+        +ui-h4('UI Range')
         br
-        +ui-range()
+        +ui-h6('UI Range single')
+        +ui-range()(data-start=5000 data-step=100 data-min=100 data-max=10000)
+        br
+        +ui-h6('UI Date double')
+        +ui-range()(data-start=[2500, 7500] data-step=100 data-min=100 data-max=10000)
       +section()
-        +ui-h4('UI Select', 'section')
+        +ui-h4('UI Select')
         br
         +ui-select('', '1', '2', '3', '4')(placeholder='Цель кредита')
       +section()
-        +ui-h4('UI Textarea', 'section')
+        +ui-h4('UI Textarea')
         br
         +ui-textarea()(maxlength='256')
       +section()
-        +ui-h4('UI Tooltip', 'section')
+        +ui-h4('UI Tooltip')
         br
         +ui-tooltip('Tooltip text')
       +section()
-        +ui-h4('UI order list', 'section')
+        +ui-h4('UI order list')
         br
         +ui-ol(orderListItems)
         br
         br
-        +ui-h4('UI unorder list', 'section')
+        +ui-h4('UI unorder list')
         br
         +ui-ul(unorderListItems)
       +section()
-        +ui-h4('Breadcrumbs', 'section')
+        +ui-h4('Breadcrumbs')
         br
         +breadcrumbs()
           +breadcrumbs-item('Main', '/')
           +breadcrumbs-item('News')
       +section
-        +ui-h4('From validation', 'section')
+        +ui-h4('From validation')
         br
         form(action='')
           +ui-input('name', 'Name')(required)
@@ -133,26 +132,26 @@ block content
           br
           +ui-button('Кнопка-submit', '', true)
       +section()
-        +ui-h4('Gallery', 'section')
+        +ui-h4('Gallery')
         br
         +gallery()
           +gallery-item('fancy_img1.png')
           +gallery-item('fancy_img2.png')
           +gallery-item('fancy_img3.png')
       +section()
-        +ui-h4('Pagination', 'section')
+        +ui-h4('Pagination')
         br
         +pagination()
       +section()
-        +ui-h4('Slider', 'section')
+        +ui-h4('Slider')
         br
         +slider()
       +section
-        +ui-h4('Table', 'section')
+        +ui-h4('Table')
           br
         +table(data-columns='3')
       +section()
-        +ui-h4('Tabs', 'section')
+        +ui-h4('Tabs')
         br
         +tabs
           +tabs-head(tabHeadings)
@@ -164,14 +163,14 @@ block content
             +tabs-item
               span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
       +section()
-        +ui-h4('Lazy load test', 'section')
+        +ui-h4('Lazy load test')
         br
         img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img1.png' alt='')
       +section()
-        +ui-h4('Lazy load test', 'section')
+        +ui-h4('Lazy load test')
         br
         img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img2.png' alt='')
       +section()
-        +ui-h4('Lazy load test', 'section')
+        +ui-h4('Lazy load test')
         br
         img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img3.png' alt='')

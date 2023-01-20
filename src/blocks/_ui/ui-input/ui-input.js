@@ -24,9 +24,9 @@ function checkInputFill() {
   if (uiInputs) {
     for (const element of uiInputs) {
       const input = element.querySelector('input')
-      input.value !== '' ? input.classList.add('filled') : input.classList.remove('filled')
+      input.value === '' ? input.classList.remove('filled') : input.classList.add('filled')
       input.addEventListener('input', function () {
-        input.value !== '' ? input.classList.add('filled') : input.classList.remove('filled')
+        input.value === '' ? input.classList.remove('filled') : input.classList.add('filled')
       })
     }
   }

@@ -21,8 +21,9 @@ fs.mkdir(`${pagesDir}/${pageName}`, () => {
       `extends ../../layouts/layout
 
 block variables
-  -const pageName = '${pageName}'
-  -const pageTitle = '${pageName}'
+  -
+    const pageName = '${pageName}'
+    const pageTitle = '${pageName}'
 
 block content
   main

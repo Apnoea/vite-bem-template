@@ -9,6 +9,7 @@ Thumbs.db
 
 # Вспомогательные файлы
 *.log*
+.stylelintcache
 node_modules/
 
 # Папка с собранными файлами проекта

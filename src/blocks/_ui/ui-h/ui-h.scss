@@ -47,12 +47,14 @@
     font-size: 14px;
   }
 }
-[class$='--light'] {
-  font-weight: 300;
-}
-[class$='--bold'] {
-  font-weight: 700;
-}
-[class$='--white'] {
-  color: #fff;
+[class*='ui-h'] {
+  &[class*='--light'] {
+    font-weight: 300;
+  }
+  &[class*='--bold'] {
+    font-weight: 700;
+  }
+  &[class*='--white'] {
+    color: #fff;
+  }
 }

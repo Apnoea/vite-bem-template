@@ -57,7 +57,7 @@ export default defineConfig({
       failOnError: false
     }),
     viteStylelint(),
-    viteSassGlob.default(),
+    viteSassGlob(),
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,

@@ -1,4 +1,4 @@
-mixin ui-button(text, mods, isSubmit)
+mixin ui-button(text, mods)
   -
     const baseName = 'ui-button'
     let allMods = ''
@@ -13,9 +13,6 @@ mixin ui-button(text, mods, isSubmit)
   if (attributes.href)
     a.ui-button(class=allMods)&attributes(attributes)!=text
       block
-
-  else if (typeof(isSubmit) !== 'undefined' && isSubmit)
-    input.ui-button(class=allMods type='submit' value=text)&attributes(attributes)
 
   else
     button.ui-button(class=allMods)&attributes(attributes)!=text
