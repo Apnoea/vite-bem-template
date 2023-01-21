@@ -7,7 +7,7 @@ const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
 function readWriteAsync(item) {
   fs.readFile(item, 'utf8', function (err, data) {
     if (err) throw err
-    const newValue = data.replace(/(="..\/..\/)/g, '="')
+    const newValue = data.replace(/="(\.\.\/)+/g, '="')
     fs.writeFile(item, newValue, 'utf8', function (err_) {
       if (err_) throw err_
     })
