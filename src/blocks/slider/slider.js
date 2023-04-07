@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle'
 
 export default function sliderInit() {
   const swiperSlider = new Swiper('.slider .swiper', {
-    speed: 400,
+    loop: true,
     spaceBetween: 100,
     pagination: {
       el: '.swiper-pagination',
