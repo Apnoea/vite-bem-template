@@ -1,6 +1,6 @@
-mixin svg(iconName, mods)
+mixin ui-accordion(head, mods)
   -
-    const baseName = 'svg'
+    const baseName = 'ui-accordion'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,10 @@ mixin svg(iconName, mods)
       allMods = allMods.trim()
     }
 
-  svg.svg(class=allMods, class='svg--' + iconName)&attributes(attributes)
-    use(xlink:href='#' + iconName)
+  .ui-accordion(class=allMods)&attributes(attributes)
+    .ui-accordion__head
+      if head.p3
+        +ui-p3(head.p3)
+      .ui-accordion__toggle
+    .ui-accordion__body
+      block

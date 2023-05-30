@@ -4,8 +4,8 @@
     display: none;
     &:checked + label {
       &::before {
-        background: $teal;
-        border-color: $teal;
+        background: teal;
+        border-color: teal;
       }
       &::after {
         opacity: 1;
@@ -15,7 +15,6 @@
   label {
     position: relative;
     padding-left: 30px;
-    font: 16px/1.5 $font;
     cursor: pointer;
     user-select: none;
     &::before {
@@ -28,7 +27,7 @@
       height: 20px;
       border: 1px solid #ccc;
       border-radius: 3px;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
     &::after {
       content: '';
@@ -43,18 +42,17 @@
       background-repeat: no-repeat;
       background-size: contain;
       opacity: 0;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
     a {
       display: inline;
       text-decoration: underline;
-      color: $teal;
+      color: teal;
     }
   }
   .just-validate-error-label {
     position: absolute;
     top: 100%;
     left: 0;
-    color: red;
   }
 }

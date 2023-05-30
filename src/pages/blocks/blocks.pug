@@ -1,4 +1,4 @@
-extends ../../layouts/layout
+extends ../../layout/layout
 
 block variables
   -
@@ -13,31 +13,31 @@ block variables
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
       { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
     ]
-    const tabHeadings = [
-      {
-        p3: 'Tab #1'
-      },
-      {
-        p3: 'Tab #2'
-      },
-      {
-        p3: 'Tab #3'
-      }
-    ]
 
 block content
   main
     .inner
       +ui-h1(pageTitle)
       +section()
+        +ui-h4('UI Accordion')
+        br
+        +ui-accordion({p3: 'Title 1'})
+          div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint beatae laborum, maxime quo tenetur aut dolore, odit mollitia corrupti quam quae molestiae, architecto ea suscipit sed. Possimus, autem obcaecati?
+        br
+        +ui-accordion({p3: 'Title 2'})
+          div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore provident, est consequuntur consectetur tempora omnis corporis soluta consequatur debitis optio maiores in a dolor ducimus saepe deleniti perferendis dicta quaerat!
+        br
+        +ui-accordion({p3: 'Title 3'})
+          div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde cupiditate eius distinctio quia molestias velit, reprehenderit rem, obcaecati minus ex ducimus laboriosam dignissimos. Ullam tempora omnis illum doloremque odio reprehenderit!
+      +section()
         +ui-h4('UI Buttons')
         br
-        +ui-button('Кнопка-ссылка')(href='/')
-        +ui-button('Кнопка-button')
+        +ui-button({p3: 'Кнопка-ссылка'})(href='/')
+        +ui-button({p3: 'Кнопка-button'})
         br
         br
-        +ui-button('Кнопка-ссылка', '--filled')(href='/')
-        +ui-button('Кнопка-button', '--filled')
+        +ui-button({p3: 'Кнопка-ссылка'}, '--filled')(href='/')
+        +ui-button({p3: 'Кнопка-button'}, '--filled')
       +section()
         +ui-h4('UI Checkbox')
         br
@@ -80,7 +80,13 @@ block content
       +section()
         +ui-h4('UI Input')
         br
-        +ui-input('phone', 'Phone')(required)
+        +ui-input('input', 'Name')(required)
+      +section()
+        +ui-h4('UI Radio')
+        br
+        +ui-radio('uiRadio1', {p3: 'Radio 1'})(name='ui-radio' checked)
+        +ui-radio('uiRadio2', {p3: 'Radio 2'})(name='ui-radio')
+        +ui-radio('uiRadio3', {p3: 'Radio 3'})(name='ui-radio')
       +section()
         +ui-h4('UI Range')
         br
@@ -93,6 +99,9 @@ block content
         +ui-h4('UI Select')
         br
         +ui-select('', '1', '2', '3', '4')(placeholder='Цель кредита')
+      +section()
+        +ui-h4('UI svg')
+        +ui-svg('icon_logo')
       +section()
         +ui-h4('UI Textarea')
         br
@@ -122,15 +131,15 @@ block content
         form(action='')
           +ui-input('name', 'Name')(required)
           br
-          +ui-input('mail', 'Mail')(required)
+          +ui-input('mail', 'Mail', '', 'email')(required)
           br
-          +ui-input('phone', 'Phone')(required)
+          +ui-input('phone', 'Phone', '', 'phone')(required)
           br
           +ui-select('', '1', '2', '3', '4')#select(placeholder='Цель кредита' required)
           br
-          +ui-checkbox('agreement', 'I love ')(required)
+          +ui-checkbox('agreement', 'I love <a href="#">semolina</a>')(required)
           br
-          +ui-button('Кнопка-submit', '', true)
+          +ui-button({p3: 'Кнопка-submit'}, '', true)
       +section()
         +ui-h4('Gallery')
         br
@@ -154,7 +163,7 @@ block content
         +ui-h4('Tabs')
         br
         +tabs
-          +tabs-head(tabHeadings)
+          +tabs-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])
           +tabs-body
             +tabs-item('--active')
               span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.

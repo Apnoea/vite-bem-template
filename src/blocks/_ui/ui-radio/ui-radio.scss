@@ -1,0 +1,32 @@
+.ui-radio {
+  input {
+    display: none;
+    &:checked ~ label {
+      &::before {
+        border-width: 5px;
+        border-color: teal;
+      }
+    }
+  }
+  label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 21px;
+    padding-left: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      border: 1px solid $black;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+  }
+}

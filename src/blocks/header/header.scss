@@ -42,7 +42,6 @@
     }
   }
   &__link {
-    font: 16px/1.5 $font;
     cursor: pointer;
     &--arrow {
       position: relative;
@@ -57,7 +56,7 @@
         height: 6px;
         border-right: 1px solid $black;
         border-bottom: 1px solid $black;
-        transition: 0.3s ease;
+        transition: 0.3s;
       }
     }
   }

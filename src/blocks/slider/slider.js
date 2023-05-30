@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle'
 
-export default function sliderInit() {
+export default function slider() {
   const swiperSlider = new Swiper('.slider .swiper', {
     loop: true,
     spaceBetween: 100,

@@ -31,9 +31,9 @@ a {
   display: inline-block;
   text-decoration: none;
   color: $black;
-  transition: ease 0.3s;
+  transition: 0.3s;
   &:hover {
-    color: $teal;
+    color: teal;
   }
 }
 ul {

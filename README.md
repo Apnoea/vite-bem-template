@@ -1,7 +1,7 @@
 # vite-bem-template
 
 ## Установка
-* установите [Node.js](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install): ```npm install --global yarn```
+* установите [Node.js](https://nodejs.org/en/) и [Yarn](https://yarnpkg.com/en/docs/install): ```npm install --global yarn```
 * скачайте сборку в консоли с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/Apnoea/vite-bem-template.git```
 * перейдите в скачанную папку со сборкой: ```cd vite-bem-template```
 * скачайте необходимые зависимости: ```yarn```
@@ -19,7 +19,7 @@ vite-bem-template
 │   ├── blocks
 │   ├── images
 │   ├── js
-│   ├── layouts
+│   ├── layout
 │   ├── pages
 │   ├── public
 │   │   └── fonts
@@ -45,7 +45,7 @@ vite-bem-template
     * блоки: ```src/blocks```
     * изображения: ```src/images```
     * JS-файлы: ```src/js```
-    * основной макет сайта: ```src/layouts```
+    * основной макет сайта: ```src/layout```
     * страницы сайта: ```src/pages```
     * шрифты: ```src/public/fonts```
     * SCSS-файлы: ```src/styles```
@@ -76,7 +76,7 @@ vite-bem-template
 * шрифты находятся в папке ```src/public/fonts```
     * используйте [форматы](https://caniuse.com/#search=woff) ```.woff2``` и ```.woff```
     * шрифты подключаются в файле ```src/styles/utils/fonts.scss```
-    * сконвертировать локальные шрифты можно с помощью [данного сервиса](https://transfonter.org/)
+    * сконвертировать локальные шрифты можно с помощью [сервиса](https://transfonter.org/)
 
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```

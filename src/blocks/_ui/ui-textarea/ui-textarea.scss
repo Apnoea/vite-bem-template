@@ -3,15 +3,11 @@
   textarea {
     width: 100%;
     padding: 15px 20px;
-    font: 16px/1.5 $font;
     background: #fff;
-    border: 1px solid $teal;
+    border: 1px solid teal;
     border-radius: 6px;
     outline: 0;
     resize: none;
-    &.parsley-error {
-      border-color: $orange;
-    }
   }
   &__counter {
     position: absolute;
@@ -19,17 +15,5 @@
     bottom: 10px;
     font: 12px/1 $font;
     pointer-events: none;
-  }
-  .parsley-errors-list {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    font: 300 14px/1 $font;
-    color: $orange;
-    background: #fff;
-    border-radius: 4px;
-    &.filled {
-      padding: 5px 10px;
-    }
   }
 }

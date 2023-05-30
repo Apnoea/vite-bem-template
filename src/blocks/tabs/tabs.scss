@@ -33,10 +33,10 @@
     cursor: pointer;
     white-space: nowrap;
     &:hover {
-      color: $teal;
+      color: teal;
     }
     &--active {
-      color: $teal;
+      color: teal;
       background: #fff;
     }
   }

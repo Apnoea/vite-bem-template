@@ -18,7 +18,7 @@ fs.mkdir(`${pagesDir}/${pageName}`, () => {
     console.log('Файл шаблона уже существует')
   } else {
     fs.writeFileSync(`${pagesDir}/${pageName}/${pageName}.pug`,
-      `extends ../../layouts/layout
+      `extends ../../layout/layout
 
 block variables
   -

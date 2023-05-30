@@ -24,12 +24,6 @@
       margin-bottom: 30px;
     }
   }
-  &__link {
-    font: 16px/1.5 $font;
-    @include media-tablet {
-      font-size: 13px;
-    }
-  }
   &__list {
     margin-top: 13px;
     .footer__item {

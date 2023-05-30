@@ -1,8 +1,8 @@
-.swiper-slide {
-  .svg {
-    transition: 0.3s ease;
+.slider {
+  &__ui-svg {
+    transition: 0.3s;
     &:hover {
-      color: $teal;
+      color: teal;
     }
   }
 }

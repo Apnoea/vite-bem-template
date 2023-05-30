@@ -1,7 +1,5 @@
-import $ from 'jquery'
 import IMask from 'imask'
-import 'parsleyjs'
-import 'parsleyjs/dist/i18n/ru'
+import JustValidate from 'just-validate'
 
 export default function uiInput() {
   inputMask()
@@ -33,5 +31,47 @@ function checkInputFill() {
 }
 
 function validation() {
-  $('form').parsley()
+  const formBlocks = document.querySelectorAll('form')
+  if (formBlocks) {
+    for (const formBlock of formBlocks) {
+      const inputs = formBlock.querySelectorAll('input[required], select[required], .ui-checkbox[required] input')
+      const mailInputs = formBlock.querySelectorAll('input[type="email"]')
+      const phoneInputs = formBlock.querySelectorAll('input[type="phone"]')
+      const validate = new JustValidate(formBlock)
+      if (inputs) {
+        for (const input of inputs) {
+          validate.addField(input, [
+            {
+              rule: 'required',
+              errorMessage: 'Обязательное поле'
+            }
+          ])
+        }
+      }
+      if (mailInputs) {
+        for (const mailInput of mailInputs) {
+          validate.addField(mailInput, [
+            {
+              rule: 'required',
+              errorMessage: 'Обязательное поле'
+            },
+            {
+              rule: 'email',
+              errorMessage: 'Введите адрес электронной почты'
+            }
+          ])
+        }
+      }
+      if (phoneInputs) {
+        for (const phoneInput of phoneInputs) {
+          validate.addField(phoneInput, [
+            {
+              validator: (value, context) => !value.match('_'),
+              errorMessage: 'Обязательное поле'
+            }
+          ])
+        }
+      }
+    }
+  }
 }

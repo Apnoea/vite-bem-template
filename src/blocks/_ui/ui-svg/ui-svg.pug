@@ -1,6 +1,6 @@
-mixin ui-input(id, text, mods, type)
+mixin ui-svg(iconName, mods)
   -
-    const baseName = 'ui-input'
+    const baseName = 'ui-svg'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,9 +10,5 @@ mixin ui-input(id, text, mods, type)
       allMods = allMods.trim()
     }
 
-  .ui-input(class=allMods)
-    input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
-    if text
-      label(for=id)
-        +ui-p6(text)
-    block
+  svg.ui-svg(class=allMods, class='svg--' + iconName)&attributes(attributes)
+    use(xlink:href='#' + iconName)
