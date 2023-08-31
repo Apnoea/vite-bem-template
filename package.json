@@ -1,6 +1,6 @@
 {
   "name": "vite-bem-template",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "simple bem pug+scss template",
   "author": "Alexey Kozyutenko",
