@@ -1,7 +1,6 @@
 import path, { resolve } from 'node:path'
 import url from 'node:url'
 import { defineConfig } from 'vite'
-import viteBabel from 'vite-plugin-babel'
 import viteMultipage from 'vite-plugin-multipage'
 import vitePug from 'vite-plugin-pug-transformer'
 import viteEslint from 'vite-plugin-eslint'
@@ -20,7 +19,9 @@ export default defineConfig({
   build: {
     outDir,
     emptyOutDir: true,
+    minify: 'terser',
     chunkSizeWarningLimit: '1024',
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
@@ -32,14 +33,11 @@ export default defineConfig({
           }
           return `${extType}/[name][extname]`
         },
-        chunkFileNames: 'scripts/scripts.js'
+        entryFileNames: 'scripts/scripts.js'
       }
     }
   },
   plugins: [
-    viteBabel({
-      presets: ['@babel/preset-env']
-    }),
     viteMultipage({
       mimeCheck: true,
       open: '/',
@@ -62,9 +60,6 @@ export default defineConfig({
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false
-      },
-      optipng: {
-        optimizationLevel: 7
       },
       mozjpeg: {
         quality: 75
