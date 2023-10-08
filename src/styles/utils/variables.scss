@@ -1,8 +1,16 @@
+:root {
+  // fonts
+  --font: 'Roboto', 'Arial', sans-serif;
+
+  // colors
+  --black: #0c0c0c;
+}
+
 // fonts
-$font: 'Roboto', 'Arial', sans-serif;
+$font: var(--font);
 
 // colors
-$black: #0c0c0c;
+$black: var(--black);
 
 // media
 $mediaWidthLaptop: 1340px;

@@ -20,6 +20,9 @@
     "block-closing-brace-newline-before": "always",
     "block-closing-brace-newline-after": "always",
     "color-hex-length": "short",
+    "declaration-block-no-redundant-longhand-properties": [true, {
+      "ignoreShorthands": ["inset"]
+    }],
     "font-family-name-quotes": "always-unless-keyword",
     "indentation": 2,
     "max-empty-lines": 2,
@@ -27,9 +30,10 @@
     "rule-empty-line-before": ["always", {
       "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]
     }],
+    "scss/at-extend-no-missing-placeholder": null,
     "scss/at-import-partial-extension": "never",
-    "scss/selector-no-redundant-nesting-selector": true,
     "scss/dollar-variable-pattern": null,
+    "scss/selector-no-redundant-nesting-selector": true,
     "selector-class-pattern": null,
     "selector-no-vendor-prefix": [true, {
       "ignoreSelectors": ["::-webkit-input-placeholder"]
