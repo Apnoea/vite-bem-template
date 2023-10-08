@@ -37,7 +37,9 @@ function validation() {
       const inputs = formBlock.querySelectorAll('input[required], select[required], .ui-checkbox[required] input')
       const mailInputs = formBlock.querySelectorAll('input[type="email"]')
       const phoneInputs = formBlock.querySelectorAll('input[type="phone"]')
-      const validate = new JustValidate(formBlock)
+      const validate = new JustValidate(formBlock, {
+        validateBeforeSubmitting: true
+      })
       if (inputs) {
         for (const input of inputs) {
           validate.addField(input, [
