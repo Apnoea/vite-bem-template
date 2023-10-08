@@ -1,4 +1,4 @@
-.tabs-head {
+.ui-tab-head {
   position: relative;
   display: flex;
   padding: 6px 15px;
@@ -41,7 +41,7 @@
     }
   }
 }
-.tabs-body {
+.ui-tab-body {
   margin-top: 45px;
   &__item {
     display: none;
