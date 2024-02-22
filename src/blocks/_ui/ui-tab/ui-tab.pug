@@ -1,18 +1,3 @@
-mixin ui-tab(mods)
-  -
-    const baseName = 'ui-tab'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
-
-  .ui-tab(class=allMods)&attributes(attributes)
-    block
-
 mixin ui-tab-head(tabHeadingItems, mods)
   -
     const baseName = 'ui-tab-head'
@@ -27,12 +12,22 @@ mixin ui-tab-head(tabHeadingItems, mods)
 
   .ui-tab-head(class=allMods)&attributes(attributes)
     each item, index in tabHeadingItems
-      .ui-tab-head__item(class=(index === 0 ? 'ui-tab-head__item--active' : ''))
+      .ui-tab-head__item(class=item.mods class=(index === 0 ? 'ui-tab-head__item--active' : ''))
+        if item.p1
+          +ui-p1(item.p1)
+        if item.p2
+          +ui-p2(item.p2)
         if item.p3
           +ui-p3(item.p3)
+        if item.p4
+          +ui-p4(item.p4)
+        if item.p5
+          +ui-p5(item.p5)
+        if item.p6
+          +ui-p6(item.p6)
         if item.p7
           +ui-p7(item.p7)
-        block
+    block
 
 mixin ui-tab-body(mods)
   -
@@ -51,7 +46,7 @@ mixin ui-tab-body(mods)
 
 mixin ui-tab-item(mods)
   -
-    const baseName = 'ui-tab-body__item'
+    const baseName = 'ui-tab-item'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -61,5 +56,5 @@ mixin ui-tab-item(mods)
       allMods = allMods.trim()
     }
 
-  .ui-tab-body__item(class=allMods)&attributes(attributes)
+  .ui-tab-item(class=allMods)&attributes(attributes)
     block

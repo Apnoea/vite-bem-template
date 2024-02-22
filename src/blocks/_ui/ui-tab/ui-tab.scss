@@ -43,11 +43,11 @@
 }
 .ui-tab-body {
   margin-top: 45px;
-  &__item {
-    display: none;
-    transition: 0.3s;
-    &--active {
-      display: block;
-    }
+}
+.ui-tab-item {
+  display: none;
+  transition: 0.3s;
+  &--active {
+    display: block;
   }
 }
