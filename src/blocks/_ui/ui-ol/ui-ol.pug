@@ -1,4 +1,4 @@
-mixin ui-ol(listItems, mods)
+mixin ui-ol(data, mods)
   -
     const baseName = 'ui-ol'
     let allMods = ''
@@ -11,8 +11,9 @@ mixin ui-ol(listItems, mods)
     }
 
   ol.ui-ol(class=allMods)&attributes(attributes)
-    each item in listItems
-      if item.p1
-        li
-          +ui-p1(item.p1)
+    if data
+      each item in data
+        if item.p2
+          li
+            +ui-p2(item.p2, item.p2mods)
     block

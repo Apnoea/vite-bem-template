@@ -1,4 +1,4 @@
-mixin ui-input(id, label, mods, type)
+mixin ui-input(id, data, mods)
   -
     const baseName = 'ui-input'
     let allMods = ''
@@ -10,9 +10,10 @@ mixin ui-input(id, label, mods, type)
       allMods = allMods.trim()
     }
 
-  .ui-input(class=allMods class=(label ? '' : 'ui-input--no-label'))
+  .ui-input(class=allMods class=(data ? '' : 'ui-input--no-label'))
     input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
-    if label
-      label(for=id)
-        +ui-p6(label)
+    if data
+      if data.p6
+        label(for=id)
+          +ui-p6(data.p6, data.p6mods)
     block

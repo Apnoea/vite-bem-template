@@ -3,15 +3,11 @@ extends ../../layout/layout
 block variables
   -
     const pageTitle = 'Repository blocks'
-    const orderListItems = [
-      { p1: 'Lorem' },
-      { p1: 'Lorem' },
-      { p1: 'Lorem' }
-    ]
-    const unorderListItems = [
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
+
+    const listItems = [
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
     ]
 
 block content
@@ -41,8 +37,9 @@ block content
       +section()
         +ui-h4('UI Checkbox')
         br
-        +ui-checkbox('id', 'I love ')
-          a(href='') semolina
+        +ui-checkbox('id', {p3: 'I love '})
+          +ui-p3
+            a(href='') semolina
       +section()
         +ui-h4('UI Datepicker')
         br
@@ -80,7 +77,9 @@ block content
       +section()
         +ui-h4('UI Input')
         br
-        +ui-input('input', 'Name')(required)
+        +ui-input('input', {p6: 'Input'})(required)
+        br
+        +ui-input('input')(required)
       +section()
         +ui-h4('UI Radio')
         br
@@ -113,6 +112,9 @@ block content
             span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
           +ui-tab-item
             span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
+            br
+            br
+            br
             +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab2')
             +ui-tab-body(data-tab-group='ui-tab2')
               +ui-tab-item('--active')
@@ -132,12 +134,12 @@ block content
       +section()
         +ui-h4('UI order list')
         br
-        +ui-ol(orderListItems)
+        +ui-ol(listItems)
         br
         br
         +ui-h4('UI unorder list')
         br
-        +ui-ul(unorderListItems)
+        +ui-ul(listItems)
       +section()
         +ui-h4('Breadcrumbs')
         br
@@ -148,15 +150,17 @@ block content
         +ui-h4('From validation')
         br
         form(action='')
-          +ui-input('name', 'Name')(required)
+          +ui-input('name', {p6: 'Name'})(required)
           br
-          +ui-input('mail', 'Mail', '', 'email')(required)
+          +ui-input('mail', {p6: 'Mail'})(required type='email')
           br
-          +ui-input('phone', 'Phone', '', 'phone')(required)
+          +ui-input('phone')(required type='phone')
           br
-          +ui-select('', '1', '2', '3', '4')#select(placeholder='Цель кредита' required)
+          +ui-select('', '1', '2', '3', '4')#select(required placeholder='Цель кредита')
           br
-          +ui-checkbox('agreement', 'I love <a href="#">semolina</a>')(required)
+          +ui-checkbox('agreement', {p3: 'I love '}, '')(required)
+            +ui-p3
+              a(href='#') semolina
           br
           +ui-button({p3: 'Кнопка-submit'}, '', true)
       +section()

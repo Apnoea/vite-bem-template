@@ -1,4 +1,4 @@
-mixin ui-datepicker(text, mods)
+mixin ui-datepicker(data, mods)
   -
     const baseName = 'ui-datepicker'
     let allMods = ''
@@ -14,4 +14,6 @@ mixin ui-datepicker(text, mods)
   .ui-datepicker(class=allMods)&attributes(attributes)
     input(id=randomId readonly)
     label(for=randomId)
-      +ui-p3(text)
+      if data
+        if data.p3
+          +ui-p3(data.p3, data.p3mods)

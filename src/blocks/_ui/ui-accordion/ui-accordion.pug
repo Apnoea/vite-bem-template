@@ -1,4 +1,4 @@
-mixin ui-accordion(head, mods)
+mixin ui-accordion(data, mods)
   -
     const baseName = 'ui-accordion'
     let allMods = ''
@@ -12,8 +12,9 @@ mixin ui-accordion(head, mods)
 
   .ui-accordion(class=allMods)&attributes(attributes)
     .ui-accordion__head
-      if head.p3
-        +ui-p3(head.p3)
+      if data
+        if data.p3
+          +ui-p3(data.p3, data.p3mods)
       .ui-accordion__toggle
     .ui-accordion__body
       block

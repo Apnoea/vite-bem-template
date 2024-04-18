@@ -44,6 +44,9 @@
       opacity: 0;
       transition: 0.3s;
     }
+    > div {
+      display: inline;
+    }
     a {
       display: inline;
       text-decoration: underline;

@@ -1,4 +1,4 @@
-mixin ui-tab-head(tabHeadingItems, mods)
+mixin ui-tab-head(data, mods)
   -
     const baseName = 'ui-tab-head'
     let allMods = ''
@@ -11,22 +11,18 @@ mixin ui-tab-head(tabHeadingItems, mods)
     }
 
   .ui-tab-head(class=allMods)&attributes(attributes)
-    each item, index in tabHeadingItems
+    each item, index in data
       .ui-tab-head__item(class=item.mods class=(index === 0 ? 'ui-tab-head__item--active' : ''))
-        if item.p1
-          +ui-p1(item.p1)
         if item.p2
-          +ui-p2(item.p2)
+          +ui-p2(item.p2, item.p2mods)
         if item.p3
-          +ui-p3(item.p3)
+          +ui-p3(item.p3, item.p3mods)
         if item.p4
-          +ui-p4(item.p4)
+          +ui-p4(item.p4, item.p4mods)
         if item.p5
-          +ui-p5(item.p5)
+          +ui-p5(item.p5, item.p5mods)
         if item.p6
-          +ui-p6(item.p6)
-        if item.p7
-          +ui-p7(item.p7)
+          +ui-p6(item.p6, item.p6mods)
     block
 
 mixin ui-tab-body(mods)

@@ -1,4 +1,4 @@
-mixin ui-button(text, mods)
+mixin ui-button(data, mods)
   -
     const baseName = 'ui-button'
     let allMods = ''
@@ -12,32 +12,34 @@ mixin ui-button(text, mods)
 
   if (attributes.href)
     a.ui-button(class=allMods)&attributes(attributes)
-      if text.p1
-        +ui-p1(text.p1, text.mods)
-      if text.p2
-        +ui-p2(text.p2, text.mods)
-      if text.p3
-        +ui-p3(text.p3, text.mods)
-      if text.p4
-        +ui-p4(text.p4, text.mods)
-      if text.p5
-        +ui-p5(text.p5, text.mods)
-      if text.p6
-        +ui-p6(text.p6, text.mods)
+      if data
+        if data.p1
+          +ui-p1(data.p1, data.mods)
+        if data.p2
+          +ui-p2(data.p2, data.mods)
+        if data.p3
+          +ui-p3(data.p3, data.mods)
+        if data.p4
+          +ui-p4(data.p4, data.mods)
+        if data.p5
+          +ui-p5(data.p5, data.mods)
+        if data.p6
+          +ui-p6(data.p6, data.mods)
       block
 
   else
     button.ui-button(class=allMods)&attributes(attributes)
-      if text.p1
-        +ui-p1(text.p1, text.mods)
-      if text.p2
-        +ui-p2(text.p2, text.mods)
-      if text.p3
-        +ui-p3(text.p3, text.mods)
-      if text.p4
-        +ui-p4(text.p4, text.mods)
-      if text.p5
-        +ui-p5(text.p5, text.mods)
-      if text.p6
-        +ui-p6(text.p6, text.mods)
+      if data
+        if data.p1
+          +ui-p1(data.p1, data.mods)
+        if data.p2
+          +ui-p2(data.p2, data.mods)
+        if data.p3
+          +ui-p3(data.p3, data.mods)
+        if data.p4
+          +ui-p4(data.p4, data.mods)
+        if data.p5
+          +ui-p5(data.p5, data.mods)
+        if data.p6
+          +ui-p6(data.p6, data.mods)
       block

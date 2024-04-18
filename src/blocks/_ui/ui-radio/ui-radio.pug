@@ -1,4 +1,4 @@
-mixin ui-radio(id, text, mods)
+mixin ui-radio(id, data, mods)
   -
     var baseName = 'ui-radio';
     var allMods = '';
@@ -14,8 +14,9 @@ mixin ui-radio(id, text, mods)
       }
 
   .ui-radio(class=allMods)
-    input(id=id type='radio' name=id)&attributes(attributes)
+    input(id=id name=id type='radio')&attributes(attributes)
     label(for=id)
-      if text.p3
-        +ui-p3(text.p3)
+      if data
+        if data.p3
+          +ui-p3(data.p3, data.p3mods)
       block
