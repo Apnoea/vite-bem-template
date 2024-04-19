@@ -14,12 +14,19 @@
   &:hover {
     color: teal;
   }
-  &--filled {
+  &[disabled] {
+    background-color: #ccc;
+    pointer-events: none;
+  }
+  &--bg-teal {
     color: #fff;
     background: teal;
     &:hover {
       color: teal;
       background: #fff;
     }
+  }
+  &--border-teal{
+    border: 1px solid teal;
   }
 }

@@ -33,7 +33,7 @@ export default defineConfig({
           }
           return `${extType}/[name][extname]`
         },
-        entryFileNames: 'scripts/scripts.js'
+        chunkFileNames: 'scripts/scripts.js'
       }
     }
   },

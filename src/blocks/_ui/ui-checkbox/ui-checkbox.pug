@@ -13,7 +13,7 @@ mixin ui-checkbox(id, data, mods)
   .ui-checkbox(class=allMods)
     input(id=id name=id type='checkbox')&attributes(attributes)
     if data
-      if data.p3
-        label(for=id)
+      label(for=id)
+        if data.p3
           +ui-p3(data.p3, data.p3mods)
           block

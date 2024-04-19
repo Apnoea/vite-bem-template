@@ -87,3 +87,38 @@ blockquote {
     padding: 50px 0 70px;
   }
 }
+.ui {
+  &-dn {
+    display: none;
+  }
+  &-l-db {
+    @include media-laptop {
+      display: block;
+    }
+  }
+  &-l-df {
+    @include media-laptop {
+      display: flex;
+    }
+  }
+  &-l-dn {
+    @include media-laptop {
+      display: none;
+    }
+  }
+  &-t-db {
+    @include media-tablet {
+      display: block;
+    }
+  }
+  &-t-df {
+    @include media-tablet {
+      display: flex;
+    }
+  }
+  &-t-dn {
+    @include media-tablet {
+      display: none;
+    }
+  }
+}

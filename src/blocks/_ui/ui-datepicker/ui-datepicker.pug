@@ -13,7 +13,7 @@ mixin ui-datepicker(data, mods)
 
   .ui-datepicker(class=allMods)&attributes(attributes)
     input(id=randomId readonly)
-    label(for=randomId)
-      if data
+    if data
+      label(for=randomId)
         if data.p3
           +ui-p3(data.p3, data.p3mods)
