@@ -6,6 +6,7 @@ import uiDatepicker from '../blocks/_ui/ui-datepicker/ui-datepicker'
 import uiInput from '../blocks/_ui/ui-input/ui-input'
 import uiRange from '../blocks/_ui/ui-range/ui-range'
 import uiSelect from '../blocks/_ui/ui-select/ui-select'
+import uiSwitch from '../blocks/_ui/ui-switch/ui-switch'
 import uiTab from '../blocks/_ui/ui-tab/ui-tab'
 import uiTextarea from '../blocks/_ui/ui-textarea/ui-textarea'
 import uiTooltip from '../blocks/_ui/ui-tooltip/ui-tooltip'
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   uiInput()
   uiRange()
   uiSelect()
+  uiSwitch()
   uiTab()
   uiTextarea()
   uiTooltip()

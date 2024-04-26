@@ -13,6 +13,8 @@ mixin ui-accordion(data, mods)
   .ui-accordion(class=allMods)&attributes(attributes)
     .ui-accordion__head
       if data
+        if data.p1
+          +ui-p1(data.p1, data.p1mods)
         if data.p3
           +ui-p3(data.p3, data.p3mods)
       .ui-accordion__toggle

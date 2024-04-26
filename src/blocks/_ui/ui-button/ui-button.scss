@@ -2,31 +2,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 50px;
+  padding: 5px 20px;
   text-align: center;
-  text-transform: uppercase;
-  color: $black;
   background: #fff;
-  border: 1px solid teal;
-  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
-  &:hover {
+  @include media-hover {
     color: teal;
+    border-color: teal;
   }
   &[disabled] {
+    color: inherit;
     background-color: #ccc;
+    border-color: #ccc;
     pointer-events: none;
+    opacity: 0.6;
   }
   &--bg-teal {
     color: #fff;
     background: teal;
-    &:hover {
+    @include media-hover {
       color: teal;
       background: #fff;
     }
   }
-  &--border-teal{
+  &--border-teal {
     border: 1px solid teal;
   }
 }
