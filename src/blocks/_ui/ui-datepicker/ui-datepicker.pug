@@ -9,7 +9,7 @@ mixin ui-datepicker(data, mods)
       }
       allMods = allMods.trim()
     }
-    let randomId = Math.random().toString(36).replace(/[^\da-z]+/g, '').slice(0, 6)
+    const randomId = Math.random().toString(36).replace(/[^\da-z]+/g, '').slice(0, 6)
 
   .ui-datepicker(class=allMods)&attributes(attributes)
     input(id=randomId readonly)

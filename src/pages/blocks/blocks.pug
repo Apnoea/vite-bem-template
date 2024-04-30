@@ -214,6 +214,10 @@ block content
       +section
         +ui-accordion({p1: 'Gallery'})
           +gallery
+            +gallery-item('fancy_img1.png', '--small')
+            +gallery-item('fancy_img2.png')
+          br
+          +gallery
             +gallery-item('fancy_img1.png')
             +gallery-item('fancy_img2.png')
             +gallery-item('fancy_img3.png')
@@ -221,6 +225,25 @@ block content
       +section
         +ui-accordion({p1: 'Pagination'})
           +pagination
+
+      +section
+        +ui-accordion({p1: 'Popup'})
+          div
+            a(href='#popup' data-popup) Open popup
+          br
+          div
+            a(href='#popup2' data-popup) Open popup2
+          +popup#popup
+            div Content
+          +popup#popup2
+            +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab')
+            +ui-tab-body(data-tab-group='ui-tab')
+              +ui-tab-item('--active')
+                span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.
+              +ui-tab-item
+                span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
+              +ui-tab-item
+                span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
 
       +section
         +ui-accordion({p1: 'Slider'})

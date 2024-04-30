@@ -11,6 +11,7 @@ import uiTab from '../blocks/_ui/ui-tab/ui-tab'
 import uiTextarea from '../blocks/_ui/ui-textarea/ui-textarea'
 import uiTooltip from '../blocks/_ui/ui-tooltip/ui-tooltip'
 import gallery from '../blocks/gallery/gallery'
+import popup from '../blocks/popup/popup'
 import slider from '../blocks/slider/slider'
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
   uiTextarea()
   uiTooltip()
   gallery()
+  popup()
   slider()
   window.addEventListener('load', scrollBarWidth, false)
   window.addEventListener('resize', scrollBarWidth, false)
