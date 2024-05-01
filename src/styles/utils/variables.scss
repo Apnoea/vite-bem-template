@@ -3,14 +3,18 @@
   --font: 'Roboto', 'Arial', sans-serif;
 
   // colors
+  --background1: #f2f2f2;
   --black: #0c0c0c;
+  --primary1: teal;
 }
 
 // fonts
 $font: var(--font);
 
 // colors
+$background1: var(--background1);
 $black: var(--black);
+$primary1: var(--primary1);
 
 // media
 $mediaWidthLaptop: 1340px;

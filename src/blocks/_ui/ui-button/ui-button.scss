@@ -10,25 +10,25 @@
   transition: 0.3s;
   cursor: pointer;
   @include media-hover {
-    color: teal;
-    border-color: teal;
+    color: $primary1;
+    border-color: $primary1;
   }
   &[disabled] {
     color: inherit;
-    background-color: #ccc;
-    border-color: #ccc;
+    background-color: $background1;
+    border-color: $background1;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.8;
   }
-  &--bg-teal {
+  &--bg-primary1 {
     color: #fff;
-    background: teal;
+    background: $primary1;
     @include media-hover {
-      color: teal;
+      color: $primary1;
       background: #fff;
     }
   }
-  &--border-teal {
-    border: 1px solid teal;
+  &--border-primary1 {
+    border: 1px solid $primary1;
   }
 }

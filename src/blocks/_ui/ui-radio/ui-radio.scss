@@ -4,7 +4,7 @@
     &:checked ~ label {
       &::before {
         border-width: 5px;
-        border-color: teal;
+        border-color: $primary1;
       }
     }
   }

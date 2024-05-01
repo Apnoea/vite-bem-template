@@ -6,14 +6,14 @@
   &__label {
     user-select: none;
     &:first-child {
-      color: teal;
+      color: $primary1;
     }
   }
   &__body {
     position: relative;
     width: 46px;
     padding: 2px;
-    border: 1px solid teal;
+    border: 1px solid $primary1;
     border-radius: 20px;
     &::before {
       content: '';
@@ -21,7 +21,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background-color: teal;
+      background-color: $primary1;
       transition: 0.3s;
     }
   }
@@ -31,7 +31,7 @@
         color: inherit;
       }
       &:last-child {
-        color: teal;
+        color: $primary1;
       }
     }
     .ui-switch__body {
