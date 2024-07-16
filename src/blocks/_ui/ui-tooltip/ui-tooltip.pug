@@ -1,4 +1,4 @@
-mixin ui-tooltip(text, mods)
+mixin ui-tooltip(data, mods)
   -
     const baseName = 'ui-tooltip'
     let allMods = ''
@@ -11,5 +11,5 @@ mixin ui-tooltip(text, mods)
     }
 
   .ui-tooltip(class=allMods)&attributes(attributes)
-    button(data-tippy-content=text) Test
+    button(data-tippy-content=data) Test
     block

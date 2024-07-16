@@ -1,4 +1,4 @@
-mixin ui-checkbox(id, data, mods)
+mixin ui-checkbox(data, mods)
   -
     const baseName = 'ui-checkbox'
     let allMods = ''
@@ -11,9 +11,8 @@ mixin ui-checkbox(id, data, mods)
     }
 
   .ui-checkbox(class=allMods)
-    input(id=id name=id type='checkbox')&attributes(attributes)
-    label(for=id)
-      if data
-        if data.p3
-          +ui-p3(data.p3, data.p3mods)
+    input(id=data.id name=data.id type='checkbox')&attributes(attributes)
+    label(for=data.id)
+      if data.p3
+        +ui-p3(data.p3, data.p3mods)
       block

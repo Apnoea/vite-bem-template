@@ -1,4 +1,4 @@
-mixin ui-svg(iconName, mods)
+mixin ui-svg(data, mods)
   -
     const baseName = 'ui-svg'
     let allMods = ''
@@ -10,5 +10,5 @@ mixin ui-svg(iconName, mods)
       allMods = allMods.trim()
     }
 
-  svg.ui-svg(class=allMods, class='svg--' + iconName)&attributes(attributes)
-    use(xlink:href='#' + iconName)
+  svg.ui-svg(class=allMods, class='svg--' + data)&attributes(attributes)
+    use(xlink:href='#' + data)

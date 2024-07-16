@@ -43,13 +43,14 @@ block content
 
       +section
         +ui-accordion({p1: 'UI Checkbox'})
-          +ui-checkbox('id1')
           br
-          +ui-checkbox('id2')
+          +ui-checkbox({id: 'id1'})
+          br
+          +ui-checkbox({id: 'id2'})
             +ui-p3
               a(href='#') link
           br
-          +ui-checkbox('id3', {p3: 'I love '})
+          +ui-checkbox({id: 'id3', p3: 'I love '})
             +ui-p3
               a(href='#') semolina
 
@@ -120,15 +121,15 @@ block content
 
       +section
         +ui-accordion({p1: 'UI Input'})
-          +ui-input('input', {p6: 'Input'})(required)
+          +ui-input({id: 'input', p6: 'Input'})(required)
           br
-          +ui-input('input')(required)
+          +ui-input({id: 'input'})(required)
 
       +section
         +ui-accordion({p1: 'UI Radio'})
-          +ui-radio('uiRadio1', {p3: 'Radio 1'})(name='ui-radio' checked)
-          +ui-radio('uiRadio2', {p3: 'Radio 2'})(name='ui-radio')
-          +ui-radio('uiRadio3', {p3: 'Radio 3'})(name='ui-radio')
+          +ui-radio({id: 'uiRadio1', p3: 'Radio 1'})(name='ui-radio' checked)
+          +ui-radio({id: 'uiRadio2', p3: 'Radio 2'})(name='ui-radio')
+          +ui-radio({id: 'uiRadio3', p3: 'Radio 3'})(name='ui-radio')
 
       +section
         +ui-accordion({p1: 'UI Range'})
@@ -197,15 +198,15 @@ block content
       +section
         +ui-accordion({p1: 'From validation'})
           form(action='')
-            +ui-input('name', {p6: 'Name'})(required)
+            +ui-input({id: 'name', p6: 'Name'})(required)
             br
-            +ui-input('mail', {p6: 'Mail'})(required type='email')
+            +ui-input({id: 'mail', p6: 'Mail'})(required type='email')
             br
-            +ui-input('phone')(required type='phone')
+            +ui-input({id: 'phone'})(required type='phone')
             br
             +ui-select('', '1', '2', '3', '4')#select(required placeholder='Цель кредита')
             br
-            +ui-checkbox('agreement', {p3: 'I love '}, '')(required)
+            +ui-checkbox({id: 'agreement', p3: 'I love '}, '')(required)
               +ui-p3
                 a(href='#') semolina
             br
