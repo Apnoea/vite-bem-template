@@ -23,7 +23,7 @@
   &__item {
     position: relative;
     margin-right: 40px;
-    &:hover {
+    @include media-hover {
       > .header__link {
         &--arrow {
           &::after {

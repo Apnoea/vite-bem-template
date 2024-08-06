@@ -11,35 +11,28 @@ mixin ui-button(data, mods)
     }
 
   if (attributes.href)
-    a.ui-button(class=allMods)&attributes(attributes)
-      if data
-        if data.p1
-          +ui-p1(data.p1, data.mods)
-        if data.p2
-          +ui-p2(data.p2, data.mods)
-        if data.p3
-          +ui-p3(data.p3, data.mods)
-        if data.p4
-          +ui-p4(data.p4, data.mods)
-        if data.p5
-          +ui-p5(data.p5, data.mods)
-        if data.p6
-          +ui-p6(data.p6, data.mods)
+    a.ui-button(href='#' class=allMods)&attributes(attributes)
+      +ui-button-inner(data)
       block
 
   else
     button.ui-button(class=allMods)&attributes(attributes)
-      if data
-        if data.p1
-          +ui-p1(data.p1, data.mods)
-        if data.p2
-          +ui-p2(data.p2, data.mods)
-        if data.p3
-          +ui-p3(data.p3, data.mods)
-        if data.p4
-          +ui-p4(data.p4, data.mods)
-        if data.p5
-          +ui-p5(data.p5, data.mods)
-        if data.p6
-          +ui-p6(data.p6, data.mods)
+      +ui-button-inner(data)
       block
+
+mixin ui-button-inner(data)
+  if data
+    if data.leftIcon
+      +ui-svg(data.leftIcon, 'ui-button')
+    if data.p1
+      +ui-p1(data.p1, data.p1mods)
+    if data.p2
+      +ui-p2(data.p2, data.p2mods)
+    if data.p3
+      +ui-p3(data.p3, data.p3mods)
+    if data.p4
+      +ui-p4(data.p4, data.p4mods)
+    if data.p5
+      +ui-p5(data.p5, data.p5mods)
+    if data.rightIcon
+      +ui-svg(data.rightIcon, 'ui-button')

@@ -11,7 +11,7 @@
     background: #fff;
     border-radius: 4px;
     transition: 0.3s;
-    &:hover {
+    @include media-hover {
       color: $primary1;
     }
     &--prev,
@@ -40,7 +40,7 @@
       svg {
         color: #d6d6d6;
       }
-      &:hover {
+      @include media-hover {
         background: inherit;
         svg {
           color: #d6d6d6;

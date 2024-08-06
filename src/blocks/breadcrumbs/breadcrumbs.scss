@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   @include media-tablet {
-    overflow-y: auto;
+    overflow: auto hidden;
   }
   &__item {
     position: relative;
@@ -33,7 +33,7 @@
   }
   &__link {
     color: #575757;
-    &:hover {
+    @include media-hover {
       color: $primary1;
     }
   }

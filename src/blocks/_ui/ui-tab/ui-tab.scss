@@ -32,7 +32,7 @@
     transition: 0.3s;
     cursor: pointer;
     white-space: nowrap;
-    &:hover {
+    @include media-hover {
       color: $primary1;
     }
     &--active {
