@@ -9,37 +9,51 @@
   ],
   "rules": {
     "alpha-value-notation": "number",
-    "at-rule-empty-line-before": ["always", {
-      "except": ["after-same-name", "inside-block"]
-    }],
-    "at-rule-name-case": "lower",
-    "at-rule-name-space-after": "always",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "after-same-name",
+          "inside-block"
+        ]
+      }
+    ],
     "at-rule-no-vendor-prefix": true,
-    "at-rule-semicolon-newline-after": "always",
-    "at-rule-semicolon-space-before": "never",
-    "block-closing-brace-newline-before": "always",
-    "block-closing-brace-newline-after": "always",
-    "color-hex-case": "lower",
     "color-hex-length": "short",
-    "declaration-block-no-redundant-longhand-properties": [true, {
-      "ignoreShorthands": ["inset"]
-    }],
+    "declaration-property-value-no-unknown": null,
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": [
+          "inset"
+        ]
+      }
+    ],
     "font-family-name-quotes": "always-unless-keyword",
-    "indentation": 2,
-    "max-empty-lines": 2,
     "no-descending-specificity": null,
-    "rule-empty-line-before": ["always", {
-      "except": ["after-rule", "after-single-line-comment", "inside-block", "first-nested"]
-    }],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "after-rule",
+          "after-single-line-comment",
+          "inside-block",
+          "first-nested"
+        ]
+      }
+    ],
     "scss/at-extend-no-missing-placeholder": null,
-    "scss/at-import-partial-extension": "never",
     "scss/dollar-variable-pattern": null,
     "scss/selector-no-redundant-nesting-selector": true,
     "selector-class-pattern": null,
-    "selector-no-vendor-prefix": [true, {
-      "ignoreSelectors": ["::-webkit-input-placeholder"]
-    }],
-    "string-quotes": "single",
+    "selector-no-vendor-prefix": [
+      true,
+      {
+        "ignoreSelectors": [
+          "::-webkit-input-placeholder"
+        ]
+      }
+    ],
     "unit-allowed-list": [
       "em",
       "rem",

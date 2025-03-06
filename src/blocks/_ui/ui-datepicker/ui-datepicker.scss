@@ -102,12 +102,12 @@
         border: 0;
         border-radius: 6px;
         box-shadow: none;
-        &:nth-last-child(-n+7) {
+        &:nth-last-child(-n + 7) {
           display: none;
         }
-        &.endRange.startRange + .endRange:not(:nth-child(7n+1)),
-        &.selected.startRange + .endRange:not(:nth-child(7n+1)),
-        &.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        &.endRange.startRange + .endRange:not(:nth-child(7n + 1)),
+        &.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+        &.startRange.startRange + .endRange:not(:nth-child(7n + 1)) {
           box-shadow: none;
         }
         &.inRange {

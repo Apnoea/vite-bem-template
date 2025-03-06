@@ -23,7 +23,7 @@
         font-size: 14px;
       }
     }
-    &:nth-child(-n+9) {
+    &:nth-child(-n + 9) {
       &::before {
         content: '0' counter(itemOl);
       }
