@@ -1,89 +1,41 @@
-mixin ui-h1(title, mods)
+mixin ui-h1(data, mods)
   -
-    const baseName = 'ui-h1'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h1${mod.trim()}` : `${mod.trim()}__ui-h1`).join(' ').trim() : ''
 
-  h1.ui-h1(class=allMods)&attributes(attributes) !{title}
+  h1.ui-h1(class=allMods)&attributes(attributes) !{data}
     block
 
-mixin ui-h2(title, mods)
+mixin ui-h2(data, mods)
   -
-    const baseName = 'ui-h2'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h2${mod.trim()}` : `${mod.trim()}__ui-h2`).join(' ').trim() : ''
 
-  h2.ui-h2(class=allMods)&attributes(attributes) !{title}
+  h2.ui-h2(class=allMods)&attributes(attributes) !{data}
     block
 
-mixin ui-h3(title, mods)
+mixin ui-h3(data, mods)
   -
-    const baseName = 'ui-h3'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h3${mod.trim()}` : `${mod.trim()}__ui-h3`).join(' ').trim() : ''
 
-  h3.ui-h3(class=allMods)&attributes(attributes) !{title}
+  h3.ui-h3(class=allMods)&attributes(attributes) !{data}
     block
 
-mixin ui-h4(title, mods)
+mixin ui-h4(data, mods)
   -
-    const baseName = 'ui-h4'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h4${mod.trim()}` : `${mod.trim()}__ui-h4`).join(' ').trim() : ''
 
-  h4.ui-h4(class=allMods)&attributes(attributes) !{title}
+  h4.ui-h4(class=allMods)&attributes(attributes) !{data}
     block
 
-mixin ui-h5(title, mods)
+mixin ui-h5(data, mods)
   -
-    const baseName = 'ui-h5'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h5${mod.trim()}` : `${mod.trim()}__ui-h5`).join(' ').trim() : ''
 
-  h5.ui-h5(class=allMods)&attributes(attributes) !{title}
+  h5.ui-h5(class=allMods)&attributes(attributes) !{data}
     block
 
-mixin ui-h6(title, mods)
+mixin ui-h6(data, mods)
   -
-    const baseName = 'ui-h6'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-h6${mod.trim()}` : `${mod.trim()}__ui-h6`).join(' ').trim() : ''
 
-  h6.ui-h6(class=allMods)&attributes(attributes) !{title}
+  h6.ui-h6(class=allMods)&attributes(attributes) !{data}
     block

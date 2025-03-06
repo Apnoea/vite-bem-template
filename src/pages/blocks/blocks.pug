@@ -3,109 +3,156 @@ extends ../../layout/layout
 block variables
   -
     const pageTitle = 'Repository blocks'
-    const orderListItems = [
-      { p1: 'Lorem' },
-      { p1: 'Lorem' },
-      { p1: 'Lorem' }
-    ]
-    const unorderListItems = [
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
-      { title: 'Lorem', descr: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
+
+    const listItems = [
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
+      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
     ]
 
 block content
   main
     .inner
       +ui-h1(pageTitle)
-      +section()
-        +ui-h4('UI Accordion')
-        br
-        +ui-accordion({p3: 'Title 1'})
-          div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint beatae laborum, maxime quo tenetur aut dolore, odit mollitia corrupti quam quae molestiae, architecto ea suscipit sed. Possimus, autem obcaecati?
-        br
-        +ui-accordion({p3: 'Title 2'})
-          div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore provident, est consequuntur consectetur tempora omnis corporis soluta consequatur debitis optio maiores in a dolor ducimus saepe deleniti perferendis dicta quaerat!
-        br
-        +ui-accordion({p3: 'Title 3'})
-          div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde cupiditate eius distinctio quia molestias velit, reprehenderit rem, obcaecati minus ex ducimus laboriosam dignissimos. Ullam tempora omnis illum doloremque odio reprehenderit!
-      +section()
-        +ui-h4('UI Buttons')
-        br
-        +ui-button({p3: 'Кнопка-ссылка'})(href='/')
-        +ui-button({p3: 'Кнопка-button'})
-        br
-        br
-        +ui-button({p3: 'Кнопка-ссылка'}, '--filled')(href='/')
-        +ui-button({p3: 'Кнопка-button'}, '--filled')
-      +section()
-        +ui-h4('UI Checkbox')
-        br
-        +ui-checkbox('id', 'I love ')
-          a(href='') semolina
-      +section()
-        +ui-h4('UI Datepicker')
-        br
-        +ui-h6('UI Date single')
-        +ui-datepicker('', '--single')
-        br
-        +ui-h6('UI Date range')
-        +ui-datepicker('', '--range')
-        br
-        +ui-h6('UI Date time')
-        +ui-datepicker('', '--time')
-      +section()
-        +ui-h4('Titles')
-        br
-        .flex(style='display: flex; align-items: baseline')
-          +ui-h1('Text')
-          +ui-h2('Text')
-          +ui-h3('Text')
-          +ui-h4('Text')
-          +ui-h5('Text')
-          +ui-h6('Text')
-        br
-        br
-        +ui-h4('Paragraphs')
-        br
-        .flex(style='display: flex; align-items: baseline')
-          +ui-p1('Text')
-          +ui-p2('Text')
-          +ui-p3('Text')
-          +ui-p4('Text')
-          +ui-p5('Text')
-          +ui-p6('Text')
-          +ui-p7('Text')
-          +ui-p8('Text')
-      +section()
-        +ui-h4('UI Input')
-        br
-        +ui-input('input', 'Name')(required)
-      +section()
-        +ui-h4('UI Radio')
-        br
-        +ui-radio('uiRadio1', {p3: 'Radio 1'})(name='ui-radio' checked)
-        +ui-radio('uiRadio2', {p3: 'Radio 2'})(name='ui-radio')
-        +ui-radio('uiRadio3', {p3: 'Radio 3'})(name='ui-radio')
-      +section()
-        +ui-h4('UI Range')
-        br
-        +ui-h6('UI Range single')
-        +ui-range()(data-start=5000 data-step=100 data-min=100 data-max=10000)
-        br
-        +ui-h6('UI Date double')
-        +ui-range()(data-start=[2500, 7500] data-step=100 data-min=100 data-max=10000)
-      +section()
-        +ui-h4('UI Select')
-        br
-        +ui-select('', '1', '2', '3', '4')(placeholder='Цель кредита')
-      +section()
-        +ui-h4('UI svg')
-        +ui-svg('icon_logo')
-      +section()
-        +ui-h4('UI Tab')
-        br
-        +ui-tab(data-tab-group='ui-tab')
+      +section
+        +ui-accordion({p1: 'UI Accordion'})
+          +ui-accordion({p3: 'Title 1'})
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint beatae laborum, maxime quo tenetur aut dolore, odit mollitia corrupti quam quae molestiae, architecto ea suscipit sed. Possimus, autem obcaecati?
+          br
+          +ui-accordion({p3: 'Title 2'})
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore provident, est consequuntur consectetur tempora omnis corporis soluta consequatur debitis optio maiores in a dolor ducimus saepe deleniti perferendis dicta quaerat!
+          br
+          +ui-accordion({p3: 'Title 3'})
+            div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde cupiditate eius distinctio quia molestias velit, reprehenderit rem, obcaecati minus ex ducimus laboriosam dignissimos. Ullam tempora omnis illum doloremque odio reprehenderit!
+
+      +section
+        +ui-accordion({p1: 'UI Buttons'})
+          +ui-button({p4: 'Кнопка-ссылка'})(href='/')
+          +ui-button({p4: 'Кнопка-button'})
+          +ui-button({p4: 'disabled'})(disabled)
+          br
+          br
+          +ui-button({p4: 'Кнопка-ссылка'}, '--border-primary1')(href='/')
+          +ui-button({p4: 'Кнопка-button'}, '--border-primary1')
+          +ui-button({p4: 'disabled'}, '--border-primary1')(disabled)
+          br
+          br
+          +ui-button({p4: 'Кнопка-ссылка'}, '--bg-primary1, --border-primary1')(href='/')
+          +ui-button({p4: 'Кнопка-button'}, '--bg-primary1, --border-primary1')
+          +ui-button({p4: 'disabled'}, '--bg-primary1, --border-primary1')(disabled)
+
+      +section
+        +ui-accordion({p1: 'UI Checkbox'})
+          br
+          +ui-checkbox({id: 'id1'})
+          br
+          +ui-checkbox({id: 'id2'})
+            +ui-p3
+              a(href='#') link
+          br
+          +ui-checkbox({id: 'id3', p3: 'I love '})
+            +ui-p3
+              a(href='#') semolina
+
+      +section
+        +ui-accordion({p1: 'UI Datepicker'})
+          +ui-h6('UI Date single')
+          +ui-datepicker('', '--single')
+          br
+          +ui-h6('UI Date range')
+          +ui-datepicker('', '--range')
+          br
+          +ui-h6('UI Date time')
+          +ui-datepicker('', '--time')
+
+      +section
+        +ui-accordion({p1: 'Titles'})
+          .flex(style='display: flex; align-items: baseline')
+            +ui-h1('Text', '--light')
+            +ui-h2('Text', '--light')
+            +ui-h3('Text', '--light')
+            +ui-h4('Text', '--light')
+            +ui-h5('Text', '--light')
+            +ui-h6('Text', '--light')
+          .flex(style='display: flex; align-items: baseline')
+            +ui-h1('Text')
+            +ui-h2('Text')
+            +ui-h3('Text')
+            +ui-h4('Text')
+            +ui-h5('Text')
+            +ui-h6('Text')
+          .flex(style='display: flex; align-items: baseline')
+            +ui-h1('Text', '--medium')
+            +ui-h2('Text', '--medium')
+            +ui-h3('Text', '--medium')
+            +ui-h4('Text', '--medium')
+            +ui-h5('Text', '--medium')
+            +ui-h6('Text', '--medium')
+
+      +section
+        +ui-accordion({p1: 'Paragraphs'})
+          .flex(style='display: flex; align-items: baseline')
+            +ui-p1('Text', '--light')
+            +ui-p2('Text', '--light')
+            +ui-p3('Text', '--light')
+            +ui-p4('Text', '--light')
+            +ui-p5('Text', '--light')
+            +ui-p6('Text', '--light')
+            +ui-p7('Text', '--light')
+            +ui-p8('Text', '--light')
+          .flex(style='display: flex; align-items: baseline')
+            +ui-p1('Text')
+            +ui-p2('Text')
+            +ui-p3('Text')
+            +ui-p4('Text')
+            +ui-p5('Text')
+            +ui-p6('Text')
+            +ui-p7('Text')
+            +ui-p8('Text')
+          .flex(style='display: flex; align-items: baseline')
+            +ui-p1('Text', '--medium')
+            +ui-p2('Text', '--medium')
+            +ui-p3('Text', '--medium')
+            +ui-p4('Text', '--medium')
+            +ui-p5('Text', '--medium')
+            +ui-p6('Text', '--medium')
+            +ui-p7('Text', '--medium')
+            +ui-p8('Text', '--medium')
+
+      +section
+        +ui-accordion({p1: 'UI Input'})
+          +ui-input({id: 'input', p6: 'Input'})(required)
+          br
+          +ui-input({id: 'input'})(required)
+
+      +section
+        +ui-accordion({p1: 'UI Radio'})
+          +ui-radio({id: 'uiRadio1', p3: 'Radio 1'})(name='ui-radio' checked)
+          +ui-radio({id: 'uiRadio2', p3: 'Radio 2'})(name='ui-radio')
+          +ui-radio({id: 'uiRadio3', p3: 'Radio 3'})(name='ui-radio')
+
+      +section
+        +ui-accordion({p1: 'UI Range'})
+          +ui-h6('UI Range single')
+          +ui-range()(data-start=5000 data-step=100 data-min=100 data-max=10000)
+          br
+          +ui-h6('UI Date double')
+          +ui-range()(data-start=[2500, 7500] data-step=100 data-min=100 data-max=10000)
+
+      +section
+        +ui-accordion({p1: 'UI Select'})
+          +ui-select(['1', '2', '3', '4'], '')(placeholder='Цель кредита')
+
+      +section
+        +ui-accordion({p1: 'UI svg'})
+          +ui-svg('icon_logo')
+
+      +section
+        +ui-accordion({p1: 'UI Switch'})
+          +ui-switch([{p3: 'Switch'}, {p3: 'Switch'}])
+
+      +section
+        +ui-accordion({p1: 'UI Tab'})
           +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab')
           +ui-tab-body(data-tab-group='ui-tab')
             +ui-tab-item('--active')
@@ -114,81 +161,107 @@ block content
               span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
             +ui-tab-item
               span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
-              +ui-tab
-                +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])
-                +ui-tab-body
-                  +ui-tab-item('--active')
-                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.
-                  +ui-tab-item
-                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
-                  +ui-tab-item
-                    span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
-      +section()
-        +ui-h4('UI Textarea')
-        br
-        +ui-textarea()(maxlength='256')
-      +section()
-        +ui-h4('UI Tooltip')
-        br
-        +ui-tooltip('Tooltip text')
-      +section()
-        +ui-h4('UI order list')
-        br
-        +ui-ol(orderListItems)
-        br
-        br
-        +ui-h4('UI unorder list')
-        br
-        +ui-ul(unorderListItems)
-      +section()
-        +ui-h4('Breadcrumbs')
-        br
-        +breadcrumbs()
-          +breadcrumbs-item('Main', '/')
-          +breadcrumbs-item('News')
+              br
+              br
+              br
+              +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab2')
+              +ui-tab-body(data-tab-group='ui-tab2')
+                +ui-tab-item('--active')
+                  span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.
+                +ui-tab-item
+                  span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
+                +ui-tab-item
+                  span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
+
       +section
-        +ui-h4('From validation')
-        br
-        form(action='')
-          +ui-input('name', 'Name')(required)
-          br
-          +ui-input('mail', 'Mail', '', 'email')(required)
-          br
-          +ui-input('phone', 'Phone', '', 'phone')(required)
-          br
-          +ui-select('', '1', '2', '3', '4')#select(placeholder='Цель кредита' required)
-          br
-          +ui-checkbox('agreement', 'I love <a href="#">semolina</a>')(required)
-          br
-          +ui-button({p3: 'Кнопка-submit'}, '', true)
-      +section()
-        +ui-h4('Gallery')
-        br
-        +gallery()
-          +gallery-item('fancy_img1.png')
-          +gallery-item('fancy_img2.png')
-          +gallery-item('fancy_img3.png')
-      +section()
-        +ui-h4('Pagination')
-        br
-        +pagination()
-      +section()
-        +ui-h4('Slider')
-        br
-        +slider()
+        +ui-accordion({p1: 'UI Textarea'})
+          +ui-textarea()(maxlength='256')
+
       +section
-        +ui-h4('Table')
+        +ui-accordion({p1: 'UI Tooltip'})
+          +ui-tooltip('Tooltip text')
+
+      +section
+        +ui-accordion({p1: 'UI order list'})
+          +ui-ol(listItems)
+
+      +section
+        +ui-accordion({p1: 'UI unorder list'})
+          +ui-ul(listItems)
+
+      +section
+        +ui-accordion({p1: 'Breadcrumbs'})
+          +breadcrumbs
+            +breadcrumbs-item({text: 'Main', link: '/'})
+            +breadcrumbs-item({text: 'News'})
+
+      +section
+        +ui-accordion({p1: 'From validation'})
+          form(action='')
+            +ui-input({id: 'name', p6: 'Name'})(required)
+            br
+            +ui-input({id: 'mail', p6: 'Mail'})(required type='email')
+            br
+            +ui-input({id: 'phone'})(required type='phone')
+            br
+            +ui-select(['1', '2', '3', '4'], '')#select(required placeholder='Цель кредита')
+            br
+            +ui-checkbox({id: 'agreement', p3: 'I love '}, '')(required)
+              +ui-p3
+                a(href='#') semolina
+            br
+            +ui-button({p3: 'Кнопка-submit'}, '', true)
+
+      +section
+        +ui-accordion({p1: 'Gallery'})
+          +gallery
+            +gallery-item('fancy_img1.png', '--small')
+            +gallery-item('fancy_img2.png')
           br
-        +table(data-columns='3')
-      +section()
-        +ui-h4('Lazy load test')
-        br
-        img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img1.png' alt='')
-      +section()
-        +ui-h4('Lazy load test')
-        br
-        img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img2.png' alt='')
-      +section()
-        +ui-h4('Lazy load test')
-        br
-        img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img3.png' alt='')
+          +gallery
+            +gallery-item('fancy_img1.png')
+            +gallery-item('fancy_img2.png')
+            +gallery-item('fancy_img3.png')
+
+      +section
+        +ui-accordion({p1: 'Pagination'})
+          +pagination
+
+      +section
+        +ui-accordion({p1: 'Popup'})
+          div
+            a(href='#popup' data-popup) Open popup
+          br
+          div
+            a(href='#popup2' data-popup) Open popup2
+          +popup#popup
+            div Content
+          +popup#popup2
+            +ui-tab-head([{p3: 'Tab #1'}, {p3: 'Tab #2'}, {p3: 'Tab #3'}])(data-tab-group='ui-tab')
+            +ui-tab-body(data-tab-group='ui-tab')
+              +ui-tab-item('--active')
+                span Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quaerat aut quas ex error id temporibus molestiae ipsa necessitatibus quos hic in praesentium atque natus inventore eius, aliquam dolore libero.
+              +ui-tab-item
+                span Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore officiis eum ullam consequatur quaerat nobis? Ut excepturi eum quod modi a nulla! Fugiat cum aut quos, perferendis vero vel?
+              +ui-tab-item
+                span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
+
+      +section
+        +ui-accordion({p1: 'Slider'})
+          +slider
+
+      +section
+        +ui-accordion({p1: 'Table'})
+          +table(data-columns='3')
+
+      +section
+        +ui-accordion({p1: 'Lazy load test'})
+          img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img1.png' alt='')
+
+      +section
+        +ui-accordion({p1: 'Lazy load test'})
+          img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img2.png' alt='')
+
+      +section
+        +ui-accordion({p1: 'Lazy load test'})
+          img.lazyload(src='../../images/swim.jpg' data-src='../../images/fancy_img3.png' alt='')

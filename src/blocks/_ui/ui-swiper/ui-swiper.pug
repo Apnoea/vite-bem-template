@@ -1,14 +1,6 @@
 mixin ui-swiper-buttons(mods)
   -
-    const baseName = 'ui-swiper-buttons'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-swiper-buttons${mod.trim()}` : `${mod.trim()}__ui-swiper-buttons`).join(' ').trim() : ''
 
   .ui-swiper-buttons(class=allMods)&attributes(attributes)
     .swiper-button-prev
@@ -17,15 +9,7 @@ mixin ui-swiper-buttons(mods)
 
 mixin ui-swiper-pagination(mods)
   -
-    const baseName = 'ui-swiper-pagination'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-swiper-pagination${mod.trim()}` : `${mod.trim()}__ui-swiper-pagination`).join(' ').trim() : ''
 
   .ui-swiper-pagination(class=allMods)&attributes(attributes)
     .swiper-pagination
@@ -33,15 +17,7 @@ mixin ui-swiper-pagination(mods)
 
 mixin ui-swiper-bullets(mods)
   -
-    const baseName = 'ui-slider-bullets'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-slider-bullets${mod.trim()}` : `${mod.trim()}__ui-slider-bullets`).join(' ').trim() : ''
 
   .ui-swiper-bullets(class=allMods)&attributes(attributes)
     .swiper-pagination
@@ -49,15 +25,7 @@ mixin ui-swiper-bullets(mods)
 
 mixin ui-swiper-fraction(mods)
   -
-    const baseName = 'ui-swiper-fraction'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-swiper-fraction${mod.trim()}` : `${mod.trim()}__ui-swiper-fraction`).join(' ').trim() : ''
 
   .ui-swiper-fraction(class=allMods)&attributes(attributes)
     .swiper-pagination

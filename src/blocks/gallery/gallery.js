@@ -1,7 +1,16 @@
 import { Fancybox } from '@fancyapps/ui'
-import ru from '@fancyapps/ui/src/Fancybox/l10n/ru'
 
 export default function gallery() {
-  Fancybox.defaults.l10n = ru
-  Fancybox.defaults.infinite = 1
+  const galleryBlocks = document.querySelectorAll('.gallery')
+  if (galleryBlocks) {
+    for (const galleryBlock of galleryBlocks) {
+      const galleryItems = galleryBlock.querySelectorAll('.gallery__item')
+      for (const galleryItem of galleryItems) {
+        galleryItem.dataset.fancybox = galleryBlock.dataset.fancyboxId
+      }
+    }
+  }
+  Fancybox.bind('[data-fancybox]', {
+    parentEl: document.querySelector('.wrapper')
+  })
 }

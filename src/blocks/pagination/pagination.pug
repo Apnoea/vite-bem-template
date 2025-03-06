@@ -1,14 +1,6 @@
 mixin pagination(mods)
   -
-    const baseName = 'pagination'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `pagination${mod.trim()}` : `${mod.trim()}__pagination`).join(' ').trim() : ''
 
   .pagination(class=allMods)&attributes(attributes)
     a.pagination__link.pagination__link--prev.pagination__link--disabled(href='#')

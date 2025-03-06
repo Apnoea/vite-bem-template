@@ -1,15 +1,7 @@
-mixin ui-tooltip(text, mods)
+mixin ui-tooltip(data, mods)
   -
-    const baseName = 'ui-tooltip'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-tooltip${mod.trim()}` : `${mod.trim()}__ui-tooltip`).join(' ').trim() : ''
 
   .ui-tooltip(class=allMods)&attributes(attributes)
-    button(data-tippy-content=text) Test
+    button(data-tippy-content=data) Test
     block

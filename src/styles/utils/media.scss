@@ -13,3 +13,13 @@
     @content;
   }
 }
+@mixin media-hover() {
+  &:active {
+    @content;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

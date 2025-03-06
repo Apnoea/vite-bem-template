@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider'
 import wNumb from 'wnumb'
 
 export default function uiRange() {
-  const rangeBlocks = document.querySelectorAll(('.ui-range'))
+  const rangeBlocks = document.querySelectorAll('.ui-range')
   if (rangeBlocks) {
     for (const rangeBlock of rangeBlocks) {
       const rangeBody = rangeBlock.querySelector('.ui-range__body')

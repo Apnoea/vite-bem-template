@@ -1,0 +1,6 @@
+mixin popup(mods)
+  -
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `popup${mod.trim()}` : `${mod.trim()}__popup`).join(' ').trim() : ''
+
+  .popup(class=allMods style='display: none;')&attributes(attributes)
+    block

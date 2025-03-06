@@ -1,19 +1,14 @@
-mixin ui-accordion(head, mods)
+mixin ui-accordion(data, mods)
   -
-    const baseName = 'ui-accordion'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-accordion${mod.trim()}` : `${mod.trim()}__ui-accordion`).join(' ').trim() : ''
 
   .ui-accordion(class=allMods)&attributes(attributes)
     .ui-accordion__head
-      if head.p3
-        +ui-p3(head.p3)
+      if data
+        if data.p1
+          +ui-p1(data.p1, data.p1mods)
+        if data.p3
+          +ui-p3(data.p3, data.p3mods)
       .ui-accordion__toggle
     .ui-accordion__body
       block

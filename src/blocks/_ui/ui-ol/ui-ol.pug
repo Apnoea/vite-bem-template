@@ -1,18 +1,11 @@
-mixin ui-ol(listItems, mods)
+mixin ui-ol(data, mods)
   -
-    const baseName = 'ui-ol'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-ol${mod.trim()}` : `${mod.trim()}__ui-ol`).join(' ').trim() : ''
 
   ol.ui-ol(class=allMods)&attributes(attributes)
-    each item in listItems
-      if item.p1
-        li
-          +ui-p1(item.p1)
+    if data
+      each item in data
+        if item.p2
+          li
+            +ui-p2(item.p2, item.p2mods)
     block

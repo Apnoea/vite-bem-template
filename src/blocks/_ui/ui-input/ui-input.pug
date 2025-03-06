@@ -1,18 +1,10 @@
-mixin ui-input(id, label, mods, type)
+mixin ui-input(data, mods)
   -
-    const baseName = 'ui-input'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-input${mod.trim()}` : `${mod.trim()}__ui-input`).join(' ').trim() : ''
 
-  .ui-input(class=allMods class=(label ? '' : 'ui-input--no-label'))
-    input(id=id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
-    if label
+  .ui-input(class=allMods class=(data ? '' : 'ui-input--no-label'))
+    input(id=data.id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
+    if data.p6
       label(for=id)
-        +ui-p6(label)
+        +ui-p6(data.p6, data.p6mods)
     block

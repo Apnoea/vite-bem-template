@@ -4,8 +4,8 @@
     display: none;
     &:checked + label {
       &::before {
-        background: teal;
-        border-color: teal;
+        background: $primary1;
+        border-color: $primary1;
       }
       &::after {
         opacity: 1;
@@ -44,10 +44,13 @@
       opacity: 0;
       transition: 0.3s;
     }
+    > p {
+      display: inline;
+    }
     a {
       display: inline;
       text-decoration: underline;
-      color: teal;
+      color: $primary1;
     }
   }
   .just-validate-error-label {

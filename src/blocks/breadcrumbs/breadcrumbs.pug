@@ -1,30 +1,16 @@
 mixin breadcrumbs(mods)
   -
-    const baseName = 'breadcrumbs'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `breadcrumbs${mod.trim()}` : `${mod.trim()}__breadcrumbs`).join(' ').trim() : ''
 
   ul.breadcrumbs(class=allMods)&attributes(attributes)
     block
 
-mixin breadcrumbs-item(text, href, mods)
+mixin breadcrumbs-item(data, mods)
   -
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += ' breadcrumbs__item--' + element.trim()
-      }
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `breadcrumbs-item${mod.trim()}` : `${mod.trim()}__breadcrumbs-item`).join(' ').trim() : ''
 
-  li.breadcrumbs__item(class=allMods)&attributes(attributes)
-    if(typeof(href) !== 'undefined' && href)
-      a.breadcrumbs__link(href=href)!=text
+  li.breadcrumbs-item(class=allMods)&attributes(attributes)
+    if data.link
+      a.breadcrumbs__link(href=data.link)!=data.text
     else
-      span.breadcrumbs__text!=text
+      span.breadcrumbs__text!=data.text

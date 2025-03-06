@@ -2,24 +2,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 50px;
+  padding: 5px 20px;
   text-align: center;
-  text-transform: uppercase;
-  color: $black;
   background: #fff;
-  border: 1px solid teal;
-  border-radius: 6px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
-  &:hover {
-    color: teal;
+  @include media-hover {
+    color: $primary1;
+    border-color: $primary1;
   }
-  &--filled {
+  &[disabled] {
+    color: inherit;
+    background-color: $background1;
+    border-color: $background1;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  &--bg-primary1 {
     color: #fff;
-    background: teal;
-    &:hover {
-      color: teal;
+    background: $primary1;
+    @include media-hover {
+      color: $primary1;
       background: #fff;
     }
+  }
+  &--border-primary1 {
+    border: 1px solid $primary1;
   }
 }

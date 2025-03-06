@@ -26,16 +26,16 @@ vite-bem-template
 │   └── styles
 ├── .change-path.js
 ├── .create-block.js
+├── .create-mixins.js
 ├── .create-page.js
 ├── .editorconfig
-├── .eslintignore
-├── .eslintrc.json
 ├── .gitattributes
 ├── .gitignore
 ├── .gitlab-ci.yml
+├── .prettierrc.json
 ├── .pug-lintrc.json
 ├── .stylelintrc.json
-├── gulpfile.js
+├── eslint.config
 ├── package.json
 ├── postcss.config.js
 └── vite.config.js

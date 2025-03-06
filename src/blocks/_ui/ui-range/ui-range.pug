@@ -1,14 +1,6 @@
 mixin ui-range(mods)
   -
-    const baseName = 'ui-range'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-range${mod.trim()}` : `${mod.trim()}__ui-range`).join(' ').trim() : ''
 
   .ui-range(class=allMods)&attributes(attributes)
     .ui-range__value

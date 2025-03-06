@@ -15,7 +15,7 @@
     width: 100%;
     padding: 16px 50px 13px 20px;
     background: #fff;
-    border: 1px solid teal;
+    border: 1px solid $primary1;
     border-radius: 6px;
     outline: none;
     cursor: pointer;
@@ -50,7 +50,7 @@
 }
 .flatpickr-calendar {
   width: 220px;
-  color: teal;
+  color: $primary1;
   border: 0;
   border-radius: 16px;
   box-shadow: 4px 10px 16px rgba(169 164 181 / 0.2);
@@ -83,7 +83,7 @@
   }
   .flatpickr-weekdays {
     height: 36px;
-    background: teal;
+    background: $primary1;
     .flatpickr-weekday {
       font: 400 14px/1.5 $font;
       color: #fff;
@@ -102,32 +102,32 @@
         border: 0;
         border-radius: 6px;
         box-shadow: none;
-        &:nth-last-child(-n+7) {
+        &:nth-last-child(-n + 7) {
           display: none;
         }
-        &.endRange.startRange + .endRange:not(:nth-child(7n+1)),
-        &.selected.startRange + .endRange:not(:nth-child(7n+1)),
-        &.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
+        &.endRange.startRange + .endRange:not(:nth-child(7n + 1)),
+        &.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+        &.startRange.startRange + .endRange:not(:nth-child(7n + 1)) {
           box-shadow: none;
         }
         &.inRange {
-          background: teal;
+          background: $primary1;
           border-radius: 0;
         }
         &.today {
           text-decoration: underline;
-          color: teal;
+          color: $primary1;
           border-color: transparent;
         }
         &.selected {
           color: #fff;
-          background: teal;
+          background: $primary1;
         }
         &.startRange {
           border-radius: 6px 0 0 6px;
         }
         &.endRange {
-          background: teal;
+          background: $primary1;
           border-radius: 0 6px 6px 0;
         }
       }

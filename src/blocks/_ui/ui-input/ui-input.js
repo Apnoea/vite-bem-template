@@ -8,12 +8,14 @@ export default function uiInput() {
 }
 
 function inputMask() {
-  const inputMaskItem = document.querySelector('#phone')
-  if (inputMaskItem) {
-    IMask(inputMaskItem, {
-      mask: '+{7} (000) 000-00-00',
-      lazy: false
-    })
+  const inputMaskItems = document.querySelectorAll('input[type="phone"]')
+  if (inputMaskItems) {
+    for (const inputMaskItem of inputMaskItems) {
+      IMask(inputMaskItem, {
+        mask: '+{7} (000) 000-00-00',
+        lazy: false
+      })
+    }
   }
 }
 

@@ -50,6 +50,12 @@
   &[class*='--light'] {
     font-weight: 300;
   }
+  &[class*='--medium'] {
+    font-weight: 500;
+  }
+  &[class*='--semibold'] {
+    font-weight: 600;
+  }
   &[class*='--bold'] {
     font-weight: 700;
   }

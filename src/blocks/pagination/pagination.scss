@@ -11,12 +11,12 @@
     background: #fff;
     border-radius: 4px;
     transition: 0.3s;
-    &:hover {
-      color: teal;
+    @include media-hover {
+      color: $primary1;
     }
     &--prev,
     &--next {
-      background: teal;
+      background: $primary1;
       svg {
         position: absolute;
         top: 50%;
@@ -40,7 +40,7 @@
       svg {
         color: #d6d6d6;
       }
-      &:hover {
+      @include media-hover {
         background: inherit;
         svg {
           color: #d6d6d6;
@@ -59,7 +59,7 @@
     }
     &--active {
       .pagination__link {
-        color: teal;
+        color: $primary1;
         cursor: default;
       }
     }

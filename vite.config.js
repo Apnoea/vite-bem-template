@@ -33,7 +33,14 @@ export default defineConfig({
           }
           return `${extType}/[name][extname]`
         },
-        entryFileNames: 'scripts/scripts.js'
+        chunkFileNames: 'scripts/scripts.js'
+      }
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ['legacy-js-api', 'import']
       }
     }
   },

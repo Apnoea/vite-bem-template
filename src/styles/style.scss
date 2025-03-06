@@ -1,5 +1,5 @@
 @import '../../node_modules/normalize.css/normalize.css';
-@import '../../node_modules/@fancyapps/ui/dist/fancybox.css';
+@import '../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css';
 @import '../../node_modules/flatpickr/dist/flatpickr.min.css';
 @import '../../node_modules/nouislider/dist/nouislider.min.css';
 @import '../../node_modules/tom-select/dist/css/tom-select.min.css';
@@ -9,7 +9,6 @@
 @import 'utils/media';
 @import 'utils/fonts';
 @import '../layout/layout';
-
 
 // BLOCKS
 

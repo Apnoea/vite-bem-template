@@ -1,0 +1,12 @@
+mixin ui-switch(data, mods)
+  -
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-switch${mod.trim()}` : `${mod.trim()}__ui-switch`).join(' ').trim() : ''
+
+  .ui-switch(class=allMods)&attributes(attributes)
+    if data
+      each item, index in data
+        if item.p3
+          +ui-p3(item.p3, item.p3mods).ui-switch__label
+        if index === 0
+          .ui-switch__body
+    block
