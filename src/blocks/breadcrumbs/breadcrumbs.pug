@@ -5,12 +5,12 @@ mixin breadcrumbs(mods)
   ul.breadcrumbs(class=allMods)&attributes(attributes)
     block
 
-mixin breadcrumbs-item(text, href, mods)
+mixin breadcrumbs-item(data, mods)
   -
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `breadcrumbs-item${mod.trim()}` : `${mod.trim()}__breadcrumbs-item`).join(' ').trim() : ''
 
   li.breadcrumbs-item(class=allMods)&attributes(attributes)
-    if(typeof(href) !== 'undefined' && href)
-      a.breadcrumbs__link(href=href)!=text
+    if data.link
+      a.breadcrumbs__link(href=data.link)!=data.text
     else
-      span.breadcrumbs__text!=text
+      span.breadcrumbs__text!=data.text

@@ -6,9 +6,9 @@ mixin gallery(mods)
   .gallery(class=allMods data-fancybox-id=randomId)&attributes(attributes)
     block
 
-mixin gallery-item(src, mods)
+mixin gallery-item(data, mods)
   -
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `gallery-item${mod.trim()}` : `${mod.trim()}__gallery-item`).join(' ').trim() : ''
 
-  a.gallery-item(class=allMods href=`../../images/${src}` data-fancybox)&attributes(attributes)
-    img(src=`../../images/${src}` alt='')
+  a.gallery-item(class=allMods href=`../../images/${data}` data-fancybox)&attributes(attributes)
+    img(src=`../../images/${data}` alt='')

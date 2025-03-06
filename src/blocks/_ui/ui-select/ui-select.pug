@@ -1,4 +1,4 @@
-mixin ui-select(mods, ...data)
+mixin ui-select(data, mods)
   -
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-select${mod.trim()}` : `${mod.trim()}__ui-select`).join(' ').trim() : ''
 

@@ -14,8 +14,8 @@ mixin ui-button(data, mods)
 
 mixin ui-button-inner(data)
   if data
-    if data.leftIcon
-      +ui-svg(data.leftIcon, 'ui-button')
+    if data.iconLeft
+      +ui-svg(data.iconLeft, 'ui-button')
     if data.p1
       +ui-p1(data.p1, data.p1mods)
     if data.p2
@@ -26,5 +26,5 @@ mixin ui-button-inner(data)
       +ui-p4(data.p4, data.p4mods)
     if data.p5
       +ui-p5(data.p5, data.p5mods)
-    if data.rightIcon
-      +ui-svg(data.rightIcon, 'ui-button')
+    if data.iconRight
+      +ui-svg(data.iconRight, 'ui-button')

@@ -141,7 +141,7 @@ block content
 
       +section
         +ui-accordion({p1: 'UI Select'})
-          +ui-select('', '1', '2', '3', '4')(placeholder='Цель кредита')
+          +ui-select(['1', '2', '3', '4'], '')(placeholder='Цель кредита')
 
       +section
         +ui-accordion({p1: 'UI svg'})
@@ -192,8 +192,8 @@ block content
       +section
         +ui-accordion({p1: 'Breadcrumbs'})
           +breadcrumbs
-            +breadcrumbs-item('Main', '/')
-            +breadcrumbs-item('News')
+            +breadcrumbs-item({text: 'Main', link: '/'})
+            +breadcrumbs-item({text: 'News'})
 
       +section
         +ui-accordion({p1: 'From validation'})
@@ -204,7 +204,7 @@ block content
             br
             +ui-input({id: 'phone'})(required type='phone')
             br
-            +ui-select('', '1', '2', '3', '4')#select(required placeholder='Цель кредита')
+            +ui-select(['1', '2', '3', '4'], '')#select(required placeholder='Цель кредита')
             br
             +ui-checkbox({id: 'agreement', p3: 'I love '}, '')(required)
               +ui-p3

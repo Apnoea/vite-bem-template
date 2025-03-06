@@ -33,4 +33,4 @@ fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
     console.log('Блок успешно создан')
   }
 })
-exec('gulp pugMixins')
+exec('node .create-mixins.js')
