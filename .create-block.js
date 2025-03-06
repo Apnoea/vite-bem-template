@@ -17,15 +17,7 @@ fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
     fs.writeFileSync(`${blocksDir}/${blockPath}/${blockName}.pug`,
       `mixin ${blockName}(mods)
   -
-    const baseName = '${blockName}'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? \`${blockName}\${mod.trim()}\` : \`\${mod.trim()}__${blockName}\`).join(' ').trim() : ''
 
   .${blockName}(class=allMods)&attributes(attributes)
     block`

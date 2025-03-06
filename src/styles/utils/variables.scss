@@ -1,6 +1,6 @@
 :root {
   // fonts
-  --font: 'Roboto', 'Arial', sans-serif;
+  --roboto: 'Roboto', 'Arial', sans-serif;
 
   // colors
   --background1: #f2f2f2;
@@ -9,7 +9,7 @@
 }
 
 // fonts
-$font: var(--font);
+$font: var(--roboto);
 
 // colors
 $background1: var(--background1);

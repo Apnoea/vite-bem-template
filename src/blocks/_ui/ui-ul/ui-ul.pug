@@ -1,14 +1,6 @@
 mixin ui-ul(data, mods)
   -
-    const baseName = 'ui-ul'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-ul${mod.trim()}` : `${mod.trim()}__ui-ul`).join(' ').trim() : ''
 
   ul.ui-ul(class=allMods)&attributes(attributes)
     if data

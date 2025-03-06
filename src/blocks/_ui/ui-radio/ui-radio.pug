@@ -1,17 +1,6 @@
 mixin ui-radio(data, mods)
   -
-    var baseName = 'ui-radio';
-    var allMods = '';
-      if(typeof(mods) !== 'undefined' && mods) {
-        var modsList = mods.split(',');
-        for (var i = 0; i < modsList.length; i++) {
-          if (modsList[i].trim()[0] == '-') {
-            allMods = allMods + baseName + modsList[i].trim() + ' ';
-          } else {
-            allMods = allMods + modsList[i].trim() + '__' + baseName + ' ';
-          }
-        }
-      }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-radio${mod.trim()}` : `${mod.trim()}__ui-radio`).join(' ').trim() : ''
 
   .ui-radio(class=allMods)
     input(id=data.id name=data.id type='radio')&attributes(attributes)

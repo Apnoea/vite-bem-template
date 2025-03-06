@@ -1,14 +1,6 @@
 mixin ui-svg(data, mods)
   -
-    const baseName = 'ui-svg'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-svg${mod.trim()}` : `${mod.trim()}__ui-svg`).join(' ').trim() : ''
 
-  svg.ui-svg(class=allMods, class='svg--' + data)&attributes(attributes)
+  svg.ui-svg(class=allMods, class='ui-svg--' + data)&attributes(attributes)
     use(xlink:href='#' + data)

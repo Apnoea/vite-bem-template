@@ -1,14 +1,6 @@
 mixin ui-tab-head(data, mods)
   -
-    const baseName = 'ui-tab-head'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-tab-head${mod.trim()}` : `${mod.trim()}__ui-tab-head`).join(' ').trim() : ''
 
   .ui-tab-head(class=allMods)&attributes(attributes)
     each item, index in data
@@ -27,30 +19,14 @@ mixin ui-tab-head(data, mods)
 
 mixin ui-tab-body(mods)
   -
-    const baseName = 'ui-tab-body'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-tab-body${mod.trim()}` : `${mod.trim()}__ui-tab-body`).join(' ').trim() : ''
 
   .ui-tab-body(class=allMods)&attributes(attributes)
     block
 
 mixin ui-tab-item(mods)
   -
-    const baseName = 'ui-tab-item'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-tab-item${mod.trim()}` : `${mod.trim()}__ui-tab-item`).join(' ').trim() : ''
 
   .ui-tab-item(class=allMods)&attributes(attributes)
     block

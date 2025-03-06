@@ -1,14 +1,6 @@
 mixin ui-checkbox(data, mods)
   -
-    const baseName = 'ui-checkbox'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-checkbox${mod.trim()}` : `${mod.trim()}__ui-checkbox`).join(' ').trim() : ''
 
   .ui-checkbox(class=allMods)
     input(id=data.id name=data.id type='checkbox')&attributes(attributes)

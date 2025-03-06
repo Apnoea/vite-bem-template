@@ -1,119 +1,55 @@
 mixin ui-p1(text, mods)
   -
-    const baseName = 'ui-p1'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p1${mod.trim()}` : `${mod.trim()}__ui-p1`).join(' ').trim() : ''
 
   .ui-p1(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p2(text, mods)
   -
-    const baseName = 'ui-p2'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p2${mod.trim()}` : `${mod.trim()}__ui-p2`).join(' ').trim() : ''
 
   .ui-p2(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p3(text, mods)
   -
-    const baseName = 'ui-p3'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p3${mod.trim()}` : `${mod.trim()}__ui-p3`).join(' ').trim() : ''
 
   .ui-p3(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p4(text, mods)
   -
-    const baseName = 'ui-p4'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p4${mod.trim()}` : `${mod.trim()}__ui-p4`).join(' ').trim() : ''
 
   .ui-p4(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p5(text, mods)
   -
-    const baseName = 'ui-p5'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p5${mod.trim()}` : `${mod.trim()}__ui-p5`).join(' ').trim() : ''
 
   .ui-p5(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p6(text, mods)
   -
-    const baseName = 'ui-p6'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p6${mod.trim()}` : `${mod.trim()}__ui-p6`).join(' ').trim() : ''
 
   .ui-p6(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p7(text, mods)
   -
-    const baseName = 'ui-p7'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p7${mod.trim()}` : `${mod.trim()}__ui-p7`).join(' ').trim() : ''
 
   .ui-p7(class=allMods)&attributes(attributes) !{text}
     block
 
 mixin ui-p8(text, mods)
   -
-    const baseName = 'ui-p8'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-p8${mod.trim()}` : `${mod.trim()}__ui-p8`).join(' ').trim() : ''
 
   .ui-p8(class=allMods)&attributes(attributes) !{text}
     block

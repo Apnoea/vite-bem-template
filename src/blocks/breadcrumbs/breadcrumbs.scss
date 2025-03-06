@@ -4,32 +4,8 @@
   @include media-tablet {
     overflow: auto hidden;
   }
-  &__item {
-    position: relative;
-    margin-right: 5px;
-    padding-right: 10px;
-    font-size: 14px;
-    white-space: nowrap;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 1px;
-      background: #aaa;
-    }
-    @include media-tablet {
-      font-size: 12px;
-    }
-    &:last-child {
-      margin-right: 0;
-      padding-right: 0;
-      &::after {
-        display: none;
-      }
-    }
+  &::-webkit-scrollbar {
+    display: none;
   }
   &__link {
     color: #575757;
@@ -39,5 +15,32 @@
   }
   &__text {
     color: #aaa;
+  }
+}
+.breadcrumbs-item {
+  position: relative;
+  margin-right: 5px;
+  padding-right: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: #aaa;
+  }
+  @include media-tablet {
+    font-size: 12px;
+  }
+  &:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    &::after {
+      display: none;
+    }
   }
 }

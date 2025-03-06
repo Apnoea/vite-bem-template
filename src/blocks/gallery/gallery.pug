@@ -1,14 +1,6 @@
 mixin gallery(mods)
   -
-    const baseName = 'gallery'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `gallery${mod.trim()}` : `${mod.trim()}__gallery`).join(' ').trim() : ''
     const randomId = Math.random().toString(36).replace(/[^\da-z]+/g, '').slice(0, 6)
 
   .gallery(class=allMods data-fancybox-id=randomId)&attributes(attributes)
@@ -16,15 +8,7 @@ mixin gallery(mods)
 
 mixin gallery-item(src, mods)
   -
-    const baseName = 'gallery-item'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `gallery-item${mod.trim()}` : `${mod.trim()}__gallery-item`).join(' ').trim() : ''
 
   a.gallery-item(class=allMods href=`../../images/${src}` data-fancybox)&attributes(attributes)
     img(src=`../../images/${src}` alt='')

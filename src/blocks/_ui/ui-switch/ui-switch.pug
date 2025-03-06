@@ -1,14 +1,6 @@
 mixin ui-switch(data, mods)
   -
-    const baseName = 'ui-switch'
-    let allMods = ''
-    if (typeof mods !== 'undefined' && mods) {
-      const modsList = mods.split(',')
-      for (const element of modsList) {
-        allMods += element.trim()[0] === '-' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
-      }
-      allMods = allMods.trim()
-    }
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-switch${mod.trim()}` : `${mod.trim()}__ui-switch`).join(' ').trim() : ''
 
   .ui-switch(class=allMods)&attributes(attributes)
     if data
