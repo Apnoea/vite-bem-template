@@ -1,20 +1,24 @@
-import path, { resolve } from 'node:path'
-import url from 'node:url'
+import { resolve, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import fs from 'node:fs'
 import { exec } from 'node:child_process'
 
-const blocksDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src/blocks')
-let blockPath = process.argv[process.argv.length - 1]
-blockPath.slice(-1) === '/' ? blockPath = blockPath.slice(0, -1) : ''
+const blocksDir = resolve(fileURLToPath(import.meta.url), '..', 'src/blocks')
+const blockPath = process.argv[process.argv.length - 1].replace(/\/$/, '')
 const blockName = blockPath.split('/').pop()
+
+const blockDirPath = join(blocksDir, blockPath)
+const pugFilePath = join(blockDirPath, `${blockName}.pug`)
+const scssFilePath = join(blockDirPath, `${blockName}.scss`)
 
 fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
   let error = false
-  if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.pug`)) {
+  if (fs.existsSync(pugFilePath)) {
     error = true
-    console.log('Файл шаблона уже существует')
+    console.log('pug файл уже существует')
   } else {
-    fs.writeFileSync(`${blocksDir}/${blockPath}/${blockName}.pug`,
+    fs.writeFileSync(
+      pugFilePath,
       `mixin ${blockName}(mods)
   -
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? \`${blockName}\${mod.trim()}\` : \`\${mod.trim()}__${blockName}\`).join(' ').trim() : ''
@@ -23,14 +27,14 @@ fs.mkdir(`${blocksDir}/${blockPath}`, { recursive: true }, () => {
     block`
     )
   }
-  if (fs.existsSync(`${blocksDir}/${blockPath}/${blockName}.scss`)) {
+  if (fs.existsSync(scssFilePath)) {
     error = true
-    console.log('Файл стилей уже существует')
+    console.log('scss файл уже существует')
   } else {
-    fs.writeFileSync(`${blocksDir}/${blockPath}/${blockName}.scss`, `.${blockName} {\n  position: relative;\n}\n`)
+    fs.writeFileSync(scssFilePath, `.${blockName} {\n  position: relative;\n}\n`)
   }
   if (error === false) {
     console.log('Блок успешно создан')
+    exec('node .create-mixins.js')
   }
 })
-exec('node .create-mixins.js')

@@ -5,9 +5,15 @@ block variables
     const pageTitle = 'Repository blocks'
 
     const listItems = [
-      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!' },
-      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.' },
-      { p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.' }
+      {
+        p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ex, aliquam dolores laboriosam eaque, itaque mollitia doloremque earum officiis velit recusandae explicabo aliquid, sed enim ipsum dolore corrupti repellat eligendi!'
+      },
+      {
+        p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ex voluptates quas, iure quasi perferendis doloremque unde nesciunt et eaque illo vitae exercitationem beatae distinctio cumque fugiat, ducimus, porro enim.'
+      },
+      {
+        p2: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corrupti natus veniam. Architecto, omnis suscipit reiciendis perferendis ea dolore quidem esse culpa, nemo quasi nisi vitae tenetur quo eligendi alias.'
+      }
     ]
 
 block content
@@ -30,16 +36,19 @@ block content
           +ui-button({p4: 'Кнопка-ссылка'})(href='/')
           +ui-button({p4: 'Кнопка-button'})
           +ui-button({p4: 'disabled'})(disabled)
+          +ui-button({iconLeft: 'icon_download', p4: 'Кнопка с иконкой'})
           br
           br
           +ui-button({p4: 'Кнопка-ссылка'}, '--border-primary1')(href='/')
           +ui-button({p4: 'Кнопка-button'}, '--border-primary1')
           +ui-button({p4: 'disabled'}, '--border-primary1')(disabled)
+          +ui-button({iconLeft: 'icon_download', p4: 'Кнопка с иконкой'}, '--border-primary1')
           br
           br
           +ui-button({p4: 'Кнопка-ссылка'}, '--bg-primary1, --border-primary1')(href='/')
           +ui-button({p4: 'Кнопка-button'}, '--bg-primary1, --border-primary1')
           +ui-button({p4: 'disabled'}, '--bg-primary1, --border-primary1')(disabled)
+          +ui-button({iconLeft: 'icon_download', p4: 'Кнопка с иконкой'}, '--bg-primary1, --border-primary1')
 
       +section
         +ui-accordion({p1: 'UI Checkbox'})

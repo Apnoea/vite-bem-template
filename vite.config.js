@@ -1,6 +1,7 @@
-import path, { resolve } from 'node:path'
-import url from 'node:url'
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
+import { exec } from 'node:child_process'
 import viteMultipage from 'vite-plugin-multipage'
 import vitePug from 'vite-plugin-pug-transformer'
 import viteEslint from 'vite-plugin-eslint'
@@ -9,8 +10,8 @@ import viteSassGlob from 'vite-plugin-sass-glob-import'
 import viteImagemin from 'vite-plugin-imagemin'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-const root = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'src')
-const outDir = resolve(path.dirname(url.fileURLToPath(import.meta.url)), 'dist')
+const root = resolve(fileURLToPath(import.meta.url), '..', 'src')
+const outDir = resolve(fileURLToPath(import.meta.url), '..', 'dist')
 
 export default defineConfig({
   root,
@@ -25,13 +26,18 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name.split('.')[1]
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-            extType = 'images'
-          } else if (extType === 'css') {
-            extType = 'styles'
+          let extType = assetInfo.names[0].split('.').pop()
+          const typeMap = {
+            png: 'images',
+            jpg: 'images',
+            jpeg: 'images',
+            svg: 'images',
+            gif: 'images',
+            ico: 'images',
+            css: 'styles'
           }
-          return `${extType}/[name][extname]`
+          const folder = typeMap[extType] || extType
+          return `${folder}/[name][extname]`
         },
         chunkFileNames: 'scripts/scripts.js'
       }

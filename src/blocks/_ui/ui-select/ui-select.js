@@ -7,7 +7,7 @@ export default function uiSelect() {
       onDropdownOpen() {
         const wrapper = select.parentElement.querySelector('.ts-wrapper')
         const list = select.parentElement.querySelector('.ts-dropdown')
-        if ((window.innerHeight - wrapper.getBoundingClientRect().top - wrapper.clientHeight) < list.clientHeight) {
+        if (window.innerHeight - wrapper.getBoundingClientRect().top - wrapper.clientHeight < list.clientHeight) {
           wrapper.classList.add('dropdown-top')
         } else {
           wrapper.classList.remove('dropdown-top')

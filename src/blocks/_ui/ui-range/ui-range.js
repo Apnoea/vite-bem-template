@@ -19,12 +19,10 @@ export default function uiRange() {
           min: stepMin,
           max: stepMax
         },
-        format: wNumb(
-          {
-            decimals: 0,
-            thousand: ' '
-          }
-        )
+        format: wNumb({
+          decimals: 0,
+          thousand: ' '
+        })
       })
 
       const rangeValues = [

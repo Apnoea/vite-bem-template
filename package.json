@@ -1,6 +1,6 @@
 {
   "name": "vite-bem-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "simple bem pug+scss template",
   "author": "Alexey Kozyutenko",
@@ -21,8 +21,8 @@
     "url": "https://github.com/Apnoea/vite-bem-template.git"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.21.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.16.2",
@@ -38,7 +38,7 @@
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.11.1",
     "terser": "^5.33.0",
-    "vite": "^6.2.0",
+    "vite": "^6.2.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-multipage": "^1.0.0",

@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 5px 20px;
   text-align: center;
   background: #fff;
@@ -19,6 +20,12 @@
     border-color: $background1;
     pointer-events: none;
     opacity: 0.8;
+  }
+  .ui-svg {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    transition: unset;
   }
   &--bg-primary1 {
     color: #fff;

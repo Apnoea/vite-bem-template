@@ -32,5 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function scrollBarWidth() {
-  document.documentElement.style.setProperty('--scrollbar-width', `${window.innerWidth - document.documentElement.clientWidth}px`)
+  const html = document.documentElement
+  html.style.setProperty('--scrollbar-width', `${window.innerWidth - html.clientWidth}px`)
 }
