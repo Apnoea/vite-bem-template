@@ -183,12 +183,19 @@ block content
                   span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi adipisci qui et necessitatibus culpa eligendi sit odit, obcaecati quia quo? Recusandae ipsum qui mollitia totam maxime possimus quam repellat earum!
 
       +section
+        +ui-accordion({p1: 'UI Text'})
+          +ui-text('Text fz16')
+          +ui-text('Text fz20', '--fz20')
+          +ui-text('Text fz24', '--fz24')
+
+      +section
         +ui-accordion({p1: 'UI Textarea'})
           +ui-textarea()(maxlength='256')
 
       +section
         +ui-accordion({p1: 'UI Tooltip'})
-          +ui-tooltip('Tooltip text')
+          div Tooltip
+            +ui-tooltip('Tooltip text')
 
       +section
         +ui-accordion({p1: 'UI order list'})

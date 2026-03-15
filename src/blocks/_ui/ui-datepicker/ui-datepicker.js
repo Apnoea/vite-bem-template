@@ -2,17 +2,24 @@ import flatpickr from 'flatpickr'
 import { Russian } from 'flatpickr/dist/l10n/ru'
 
 export default function uiDatepicker() {
+  function initializeDatepickers(selector, settings) {
+    const datepickers = document.querySelectorAll(selector)
+    for (const datepicker of datepickers) {
+      const input = datepicker.querySelector('input')
+      flatpickr(input, settings)
+    }
+  }
+
   // datepicker settings
-  const tomorrowDate = new Date().fp_incr(1)
   const defaultSettings = {
     locale: Russian,
     defaultDate: 'today',
     dateFormat: 'd.m.Y',
-    disableMobile: 'true'
+    disableMobile: true
   }
   const rangeSettings = {
     mode: 'range',
-    defaultDate: ['today', tomorrowDate]
+    defaultDate: ['today', new Date().fp_incr(1)]
   }
   const timeSettings = {
     enableTime: true,
@@ -23,19 +30,7 @@ export default function uiDatepicker() {
   }
 
   // datepicker init
-  const datepickersSingle = document.querySelectorAll('.ui-datepicker--single')
-  const datepickersRange = document.querySelectorAll('.ui-datepicker--range')
-  const datepickersTime = document.querySelectorAll('.ui-datepicker--time')
-  for (const datepicker of datepickersSingle) {
-    const datepickerSingle = datepicker.querySelector('input')
-    flatpickr(datepickerSingle, defaultSettings)
-  }
-  for (const datepicker of datepickersRange) {
-    const datepickerRange = datepicker.querySelector('input')
-    flatpickr(datepickerRange, Object.assign({}, defaultSettings, rangeSettings))
-  }
-  for (const datepicker of datepickersTime) {
-    const datepickerTime = datepicker.querySelector('input')
-    flatpickr(datepickerTime, timeSettings)
-  }
+  initializeDatepickers('.ui-datepicker--single', defaultSettings)
+  initializeDatepickers('.ui-datepicker--range', { ...defaultSettings, ...rangeSettings })
+  initializeDatepickers('.ui-datepicker--time', timeSettings)
 }

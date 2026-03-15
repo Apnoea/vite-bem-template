@@ -3,5 +3,5 @@ mixin ui-tooltip(data, mods)
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-tooltip${mod.trim()}` : `${mod.trim()}__ui-tooltip`).join(' ').trim() : ''
 
   .ui-tooltip(class=allMods)&attributes(attributes)
-    button(data-tippy-content=data) Test
+    button(data-tippy-content=data)
     block

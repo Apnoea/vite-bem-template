@@ -3,8 +3,8 @@ mixin ui-swiper-buttons(mods)
     const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-swiper-buttons${mod.trim()}` : `${mod.trim()}__ui-swiper-buttons`).join(' ').trim() : ''
 
   .ui-swiper-buttons(class=allMods)&attributes(attributes)
-    .swiper-button-prev
-    .swiper-button-next
+    .ui-swiper-button.swiper-button-prev
+    .ui-swiper-button.swiper-button-next
     block
 
 mixin ui-swiper-pagination(mods)

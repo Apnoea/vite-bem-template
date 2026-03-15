@@ -5,6 +5,6 @@ mixin ui-input(data, mods)
   .ui-input(class=allMods class=(data ? '' : 'ui-input--no-label'))
     input(id=data.id type=(typeof(type) !== 'undefined' && type ? type : 'text'))&attributes(attributes)
     if data.p6
-      label(for=id)
+      label(for=data.id)
         +ui-p6(data.p6, data.p6mods)
     block

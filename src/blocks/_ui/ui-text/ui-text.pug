@@ -1,0 +1,6 @@
+mixin ui-text(text, mods)
+  -
+    const allMods = mods ? mods.split(',').map(mod => mod.trim()[0] === '-' ? `ui-text${mod.trim()}` : `${mod.trim()}__ui-text`).join(' ').trim() : ''
+
+  .ui-text(class=allMods)&attributes(attributes) !{text}
+    block

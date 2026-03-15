@@ -7,7 +7,7 @@ import vitePug from 'vite-plugin-pug-transformer'
 import viteEslint from 'vite-plugin-eslint'
 import viteStylelint from 'vite-plugin-stylelint'
 import viteSassGlob from 'vite-plugin-sass-glob-import'
-import viteImagemin from 'vite-plugin-imagemin'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const root = resolve(fileURLToPath(import.meta.url), '..', 'src')
@@ -20,7 +20,7 @@ export default defineConfig({
   build: {
     outDir,
     emptyOutDir: true,
-    minify: 'terser',
+    minify: 'esbuild',
     chunkSizeWarningLimit: '1024',
     assetsInlineLimit: 0,
     rollupOptions: {
@@ -69,28 +69,40 @@ export default defineConfig({
     }),
     viteStylelint(),
     viteSassGlob(),
-    viteImagemin({
-      gifsicle: {
-        optimizationLevel: 7,
-        interlaced: false
-      },
-      mozjpeg: {
-        quality: 75
-      },
-      pngquant: {
-        quality: [0.7, 0.7],
-        speed: 4
-      },
-      svgo: {
+    ViteImageOptimizer({
+      svg: {
+        multipass: true,
         plugins: [
           {
-            name: 'removeViewBox'
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupNumericValues: false,
+                cleanupIds: {
+                  minify: false,
+                  remove: false
+                },
+                convertPathData: false
+              }
+            }
           },
+          'sortAttrs',
           {
-            name: 'removeEmptyAttrs',
-            active: false
+            name: 'addAttributesToSVGElement',
+            params: {
+              attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }]
+            }
           }
         ]
+      },
+      png: {
+        quality: 80
+      },
+      jpeg: {
+        quality: 80
+      },
+      jpg: {
+        quality: 80
       }
     }),
     createSvgIconsPlugin({

@@ -1,0 +1,177 @@
+.ui-text {
+  font: 16px/1.3 $font;
+}
+[class*='ui-text'] {
+  // desktop font-sizes
+  &[class*='--fz14'] {
+    font-size: 14px;
+  }
+  &[class*='--fz18'] {
+    font-size: 18px;
+  }
+  &[class*='--fz20'] {
+    font-size: 20px;
+  }
+  &[class*='--fz22'] {
+    font-size: 22px;
+  }
+  &[class*='--fz24'] {
+    font-size: 24px;
+  }
+  &[class*='--fz26'] {
+    font-size: 26px;
+  }
+  &[class*='--fz28'] {
+    font-size: 28px;
+  }
+  &[class*='--fz30'] {
+    font-size: 30px;
+  }
+  &[class*='--fz32'] {
+    font-size: 32px;
+  }
+  &[class*='--fz34'] {
+    font-size: 34px;
+  }
+  &[class*='--fz36'] {
+    font-size: 36px;
+  }
+  &[class*='--fz38'] {
+    font-size: 38px;
+  }
+  &[class*='--fz40'] {
+    font-size: 40px;
+  }
+  &[class*='--fz42'] {
+    font-size: 42px;
+  }
+  &[class*='--fz44'] {
+    font-size: 44px;
+  }
+  &[class*='--fz46'] {
+    font-size: 46px;
+  }
+  &[class*='--fz48'] {
+    font-size: 48px;
+  }
+
+  // laptop font-sizes
+  &[class*='--l-fz14'] {
+    @include media-laptop {
+      font-size: 14px;
+    }
+  }
+  &[class*='--l-fz16'] {
+    @include media-laptop {
+      font-size: 16px;
+    }
+  }
+  &[class*='--l-fz18'] {
+    @include media-laptop {
+      font-size: 18px;
+    }
+  }
+  &[class*='--l-fz20'] {
+    @include media-laptop {
+      font-size: 20px;
+    }
+  }
+  &[class*='--l-fz22'] {
+    @include media-laptop {
+      font-size: 22px;
+    }
+  }
+  &[class*='--l-fz24'] {
+    @include media-laptop {
+      font-size: 24px;
+    }
+  }
+  &[class*='--l-fz26'] {
+    @include media-laptop {
+      font-size: 26px;
+    }
+  }
+  &[class*='--l-fz28'] {
+    @include media-laptop {
+      font-size: 28px;
+    }
+  }
+
+  // tablet font-sizes
+  &[class*='--t-fz12'] {
+    @include media-tablet {
+      font-size: 12px;
+    }
+  }
+  &[class*='--t-fz14'] {
+    @include media-tablet {
+      font-size: 14px;
+    }
+  }
+  &[class*='--t-fz16'] {
+    @include media-tablet {
+      font-size: 16px;
+    }
+  }
+  &[class*='--t-fz18'] {
+    @include media-tablet {
+      font-size: 18px;
+    }
+  }
+  &[class*='--t-fz20'] {
+    @include media-tablet {
+      font-size: 20px;
+    }
+  }
+  &[class*='--t-fz22'] {
+    @include media-tablet {
+      font-size: 22px;
+    }
+  }
+  &[class*='--t-fz24'] {
+    @include media-tablet {
+      font-size: 24px;
+    }
+  }
+  &[class*='--t-fz26'] {
+    @include media-tablet {
+      font-size: 26px;
+    }
+  }
+  &[class*='--t-fz28'] {
+    @include media-tablet {
+      font-size: 28px;
+    }
+  }
+
+  // line-height styles
+  &[class*='--lh1'] {
+    line-height: 1;
+  }
+  &[class*='--lh1.1'] {
+    line-height: 1.1;
+  }
+  &[class*='--lh1.2'] {
+    line-height: 1.2;
+  }
+  &[class*='--lh1.4'] {
+    line-height: 1.4;
+  }
+  &[class*='--lh1.5'] {
+    line-height: 1.5;
+  }
+
+  // font-weight styles
+  &[class*='--light'] {
+    font-weight: 300;
+  }
+  &[class*='--medium'] {
+    font-weight: 500;
+  }
+  &[class*='--semibold'] {
+    font-weight: 600;
+  }
+  &[class*='--bold'] {
+    font-weight: 700;
+  }
+}
